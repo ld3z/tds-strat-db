@@ -23,7 +23,7 @@ export const StrategyProvider: React.FC<{ children: ReactNode }> = ({ children }
   });
 
   useEffect(() => {
-    fetch('/strategies.json')
+    fetch(`${import.meta.env.BASE_URL}strategies.json`)
       .then(res => res.json())
       .then(data => setStrategies(data));
   }, []);
