@@ -9,7 +9,7 @@ export const gamemodes = [
   },
   { value: "badlands", label: "Badlands II", icon: "mdi:account-cowboy-hat" },
   { value: "pizza-party", label: "Pizza Party", icon: "mdi:pizza" },
-  { value: "hidden-wave", label: "Hidden Wave", icon: "bitcoinicons:hidden-filled"}
+  { value: "hidden-wave", label: "Hidden Wave", icon: "bitcoin-icons:hidden-filled"}
 ];
 
 export const difficulties = [
