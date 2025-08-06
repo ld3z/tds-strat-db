@@ -154,5 +154,18 @@
     "quests": ["Dark Radiance (Fallen Accelerator)", "Shadowforge Tinkerer (Fallen Engineer)"],
     "authors": ["Blehh"],
     "createdAt": "2024-01-09"
+  },
+  {
+    "id": "13",
+    "title": "Brainless Souls",
+    "description": "Four player strat for Lost Souls",
+    "docUrl": "https://docs.google.com/document/d/1hoXjvc9wucSH6ZpyZf2V8q5fTwlOXhuR6-oz6huE_m4/edit?tab=t.0#heading=h.o9oyu56ihdky",
+    "gamemode": "pizza-party",
+    "playerCount": 4,
+    "difficulty": "easy",
+    "tags": ["squad", "NST", "ST"],
+    "quests": [],
+    "authors": ["@legal_gato", "@adstley", "@truabgke", "@.golden_guard"],
+    "createdAt": "2024-01-09"
   }
 ]
