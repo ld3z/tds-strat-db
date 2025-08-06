@@ -141,5 +141,18 @@
     "quests": [],
     "authors": ["artursilva", "zeezeebot", "ivan_353", "novaialm", "hurricane_pt", "supersonic8208", "carlos1132295041.", "guardvandal"],
     "createdAt": "2024-01-09"
+  },
+  {
+    "id": "12",
+    "title": "Panko Warfare",
+    "description": "Duo hardcore strat",
+    "docUrl": "https://docs.google.com/document/d/1sA5wp-4KBamCl0rS5OgKkOwzGSBuw1EMHc2cIOuJpsU/edit?tab=t.0#heading=h.satibp125qrq",
+    "gamemode": "hardcore",
+    "playerCount": 2,
+    "difficulty": "easy",
+    "tags": ["duo", "NST", "grind"],
+    "quests": ["Dark Radiance (Fallen Accelerator)", "Shadowforge Tinkerer (Fallen Engineer)"],
+    "authors": ["Blehh"],
+    "createdAt": "2024-01-09"
   }
 ]
