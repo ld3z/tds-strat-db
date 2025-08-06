@@ -34,7 +34,7 @@
     "playerCount": 2,
     "difficulty": "easy",
     "tags": ["duo", "reliable", "NST", "mission-quests"],
-    "quests": ["Hazardous Waste", "For The Commander!", "Dark Radiance", "Shadowforge Tinkerer"],
+    "quests": ["Hazardous Haste (Nuclear Accelerator)", "For The Commander! (Star Spartan Militant)", "Dark Radiance (Fallen Accelerator)", "Shadowforge Tinkerer (Fallen Engineer)"],
     "authors": ["SebasDark25", "TDS Commando", "LorenzoTDS", "MinhTri"],
     "createdAt": "2024-01-09"
   },
@@ -67,7 +67,7 @@
   {
     "id": "6",
     "title": "Pizza Munchers",
-    "description": "4600+ coins per hour, 2350+ exp per hour, Requires only 2 towers",
+    "description": "4600+ coins per hour, 2350+ exp per hour, requires only 2 towers",
     "docUrl": "https://docs.google.com/document/d/1zbY38sGIB3PkScfQSu8amxD66eAYYdPCNeQ_onDTZfE/edit?tab=t.0",
     "gamemode": "pizza-party",
     "playerCount": 2,
@@ -120,12 +120,12 @@
     "id": "10",
     "title": "Silly Quickdraw",
     "description": "Best coin grind strat and no special towers",
-    "docUrl": "https://docs.google.com/document/d/1npCttPNGLoXoH6ytRUYYzv2tJDKXWQHOt5F3Mwck4T0/edit?tab=t.0",
+    "docUrl": "https://docs.google.com/document/d/1qHP0G-dXLSp7vtBeNs0-AvtGYSIGuLPpufXVmVxNiqU",
     "gamemode": "badlands",
     "playerCount": 4,
     "difficulty": "hard",
-    "tags": ["quad", "NST"],
-    "quests": ["Fallen Cowboy"],
+    "tags": ["quad", "NST", "mission-quests"],
+    "quests": ["Condemned Vigilante (Fallen Cowboy)"],
     "authors": ["Blehh"],
     "createdAt": "2024-01-09"
   },
