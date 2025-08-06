@@ -167,5 +167,44 @@
     "quests": [],
     "authors": ["@legal_gato", "@adstley", "@truabgke", "@.golden_guard"],
     "createdAt": "2024-01-09"
+  },
+  {
+    "id": "14",
+    "title": "pew",
+    "description": "Solo fallen speedrun",
+    "docUrl": "https://docs.google.com/document/d/1YvI-yD8cPOiX6NrUUs4d7wbNNFD9XEXw3aaiC1fjt2E/edit?tab=t.sfxbztqbamlr",
+    "gamemode": "fallen",
+    "playerCount": 1,
+    "difficulty": "hard",
+    "tags": ["solo", "NST"],
+    "quests": [],
+    "authors": ["youbadmanithink", "rainyrians"],
+    "createdAt": "2024-01-09"
+  },
+  {
+    "id": "15",
+    "title": "Fucketh Brawlereth (in a british accent)",
+    "description": "Duo fallen strat that doesn't use brawler",
+    "docUrl": "https://docs.google.com/document/d/1Mj4wIw6vF6mfDMPUCDaHsEzNbo1EYjIMaRmT1n6mvww/edit?tab=t.p30r6gungqa",
+    "gamemode": "fallen",
+    "playerCount": 2,
+    "difficulty": "easy",
+    "tags": ["duo"],
+    "quests": [],
+    "authors": ["oddlypankaes", "grovepark", "volticsurge"],
+    "createdAt": "2024-01-09"
+  },
+  {
+    "id": "16",
+    "title": "Surf & Awaken",
+    "description": "Hidden Wave on Summer Castle",
+    "docUrl": "https://docs.google.com/document/d/1MyHcpceY8nquHj7DOsaE_cb_MdFT5uuVA_S2wvmeVcg/edit?tab=t.0",
+    "gamemode": "hidden-wave",
+    "playerCount": 4,
+    "difficulty": "medium",
+    "tags": ["duo", "hidden-wave"],
+    "quests": [],
+    "authors": ["@jojoboz123"],
+    "createdAt": "2024-01-09"
   }
 ]
