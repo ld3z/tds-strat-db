@@ -8,7 +8,7 @@ export default defineConfig({
       collections: {
         mdi: () => import('@iconify/json/json/mdi.json').then(i => i.default),
         heroicons: () => import('@iconify/json/json/heroicons.json').then(i => i.default),
-        bitcoinicons: () => import('@iconify/json/json/bitcoinicons.json').then(i => i.default),
+        bitcoinicons: () => import('@iconify/json/json/bitcoin-icons.json').then(i => i.default),
       }
     })
   ],
