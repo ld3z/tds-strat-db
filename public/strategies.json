@@ -26,9 +26,14 @@
     "gamemode": "hardcore",
     "playerCount": 3,
     "difficulty": "easy",
-    "tags": ["NST", "trio"],
+    "tags": [
+      "NST",
+      "trio"
+    ],
     "quests": [],
-    "authors": ["Lucille Team"],
+    "authors": [
+      "Lucille Team"
+    ],
     "indexedOn": "2025-08-05",
     "starred": true
   },
@@ -36,39 +41,83 @@
     "id": "2",
     "title": "Trio Miners X",
     "description": "Easiest Trio grind strat",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1R6d03hWLqdHd18U-vwPdw3GwdB1toH2YwzwrL9yhsW0/edit?tab=t.0#heading=h.g4vijxsg8v11"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1R6d03hWLqdHd18U-vwPdw3GwdB1toH2YwzwrL9yhsW0/edit?tab=t.0#heading=h.g4vijxsg8v11"
+      }
+    ],
     "gamemode": "hardcore",
     "playerCount": 3,
     "difficulty": "normal",
-    "tags": ["trio", "reliable", "ST", "grind"],
+    "tags": [
+      "trio",
+      "reliable",
+      "ST",
+      "grind"
+    ],
     "quests": [],
-    "authors": ["Blehh"],
+    "authors": [
+      "Blehh"
+    ],
     "indexedOn": "2025-08-05"
   },
   {
     "id": "3",
     "title": "Devastated Battlefield",
     "description": "Good strat",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1MFIolXwGG6zATVOMYWvMAuL_tteOrPQXslWPRWvVTi0/edit?tab=t.0"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1MFIolXwGG6zATVOMYWvMAuL_tteOrPQXslWPRWvVTi0/edit?tab=t.0"
+      }
+    ],
     "gamemode": "hardcore",
     "playerCount": 2,
     "difficulty": "normal",
-    "tags": ["duo", "reliable", "NST", "mission-quests"],
-    "quests": ["Hazardous Haste (Nuclear Accelerator)", "For The Commander! (Star Spartan Militant)", "Dark Radiance (Fallen Accelerator)", "Shadowforge Tinkerer (Fallen Engineer)"],
-    "authors": ["SebasDark25", "TDS Commando", "LorenzoTDS", "MinhTri"],
+    "tags": [
+      "duo",
+      "reliable",
+      "NST",
+      "mission-quests"
+    ],
+    "quests": [
+      "Hazardous Haste (Nuclear Accelerator)",
+      "For The Commander! (Star Spartan Militant)",
+      "Dark Radiance (Fallen Accelerator)",
+      "Shadowforge Tinkerer (Fallen Engineer)"
+    ],
+    "authors": [
+      "SebasDark25",
+      "TDS Commando",
+      "LorenzoTDS",
+      "MinhTri"
+    ],
     "indexedOn": "2025-08-05"
   },
   {
     "id": "4",
     "title": "Violent Souls",
     "description": "Pizza pizza",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1JrEKFaLYorokU8F15PSvyfs585PYeOly6HqgLt-m9Ss/edit"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1JrEKFaLYorokU8F15PSvyfs585PYeOly6HqgLt-m9Ss/edit"
+      }
+    ],
     "gamemode": "pizza-party",
     "playerCount": 4,
     "difficulty": "insane",
-    "tags": ["quad", "NST", "ST", "grind"],
+    "tags": [
+      "quad",
+      "NST",
+      "ST",
+      "grind"
+    ],
     "quests": [],
-    "authors": ["Blehh"],
+    "authors": [
+      "Blehh"
+    ],
     "indexedOn": "2025-08-05",
     "starred": true
   },
@@ -76,78 +125,154 @@
     "id": "5",
     "title": "Beginner Bashing",
     "description": "4600+ coins per hour, 2350+ exp per hour, Requires only 2 towers",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1qn07Fo3uYTQsORwCyKBgNuJxZlfNl7pNMkV1hwemwBU/edit?tab=t.0#heading=h.xxdqkvvf7n7z"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1qn07Fo3uYTQsORwCyKBgNuJxZlfNl7pNMkV1hwemwBU/edit?tab=t.0#heading=h.xxdqkvvf7n7z"
+      }
+    ],
     "gamemode": "pizza-party",
     "playerCount": 1,
     "difficulty": "insane",
-    "tags": ["solo", "grind", "two-towers"],
+    "tags": [
+      "solo",
+      "grind",
+      "two-towers"
+    ],
     "quests": [],
-    "authors": ["Kitsunal."],
+    "authors": [
+      "Kitsunal."
+    ],
     "indexedOn": "2025-08-05"
   },
   {
     "id": "6",
     "title": "Pizza Munchers",
     "description": "Simple NST Duo Pizza Party Strategy For Fallen Warden Mission",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1zbY38sGIB3PkScfQSu8amxD66eAYYdPCNeQ_onDTZfE/edit?tab=t.0"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1zbY38sGIB3PkScfQSu8amxD66eAYYdPCNeQ_onDTZfE/edit?tab=t.0"
+      }
+    ],
     "gamemode": "pizza-party",
     "playerCount": 2,
     "difficulty": "insane",
-    "tags": ["duo", "grind"],
-    "quests": ["Underworld Warden (Fallen Warden)"],
-    "authors": ["@grimesbtw", "@eeeeee.e_e", "Electric Association"],
+    "tags": [
+      "duo",
+      "grind"
+    ],
+    "quests": [
+      "Underworld Warden (Fallen Warden)"
+    ],
+    "authors": [
+      "@grimesbtw",
+      "@eeeeee.e_e",
+      "Electric Association"
+    ],
     "indexedOn": "2025-08-05"
   },
   {
     "id": "7",
     "title": "Pizza Shredders",
     "description": "4000+ coins per hour, safer triumph than Pizza Munchers",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1rEtZH4eoWNLu_YEMI9NAkNn5Q-A533qsXjuo7niYpao/edit"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1rEtZH4eoWNLu_YEMI9NAkNn5Q-A533qsXjuo7niYpao/edit"
+      }
+    ],
     "gamemode": "pizza-party",
     "playerCount": 2,
     "difficulty": "insane",
-    "tags": ["duo", "grind"],
+    "tags": [
+      "duo",
+      "grind"
+    ],
     "quests": [],
-    "authors": ["@grimesbtw", "@eeeeee.e_e", "@fuzzx.dev", "Electric Association"],
+    "authors": [
+      "@grimesbtw",
+      "@eeeeee.e_e",
+      "@fuzzx.dev",
+      "Electric Association"
+    ],
     "indexedOn": "2025-08-05"
   },
   {
     "id": "8",
     "title": "Toxic Warfare",
     "description": "Best trio PW2 strat, 18 mins, no rng",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/17NFb41DmAbkWobhsQ9FytWy_X-DGF9yoCNQDGfMSlv8/edit#heading=h.xr59spo9o45t"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/17NFb41DmAbkWobhsQ9FytWy_X-DGF9yoCNQDGfMSlv8/edit#heading=h.xr59spo9o45t"
+      }
+    ],
     "gamemode": "polluted-wasteland",
     "playerCount": 3,
     "difficulty": "insane",
-    "tags": ["trio", "working"],
+    "tags": [
+      "trio",
+      "working"
+    ],
     "quests": [],
-    "authors": ["Limonade", "mygirlcupid", "artemcrytich"],
+    "authors": [
+      "Limonade",
+      "mygirlcupid",
+      "artemcrytich"
+    ],
     "indexedOn": "2025-08-05"
   },
   {
     "id": "9",
     "title": "Radioactive Triplets",
     "description": "100% win rate, no rng, NST",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1npCttPNGLoXoH6ytRUYYzv2tJDKXWQHOt5F3Mwck4T0/edit?tab=t.0"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1npCttPNGLoXoH6ytRUYYzv2tJDKXWQHOt5F3Mwck4T0/edit?tab=t.0"
+      }
+    ],
     "gamemode": "polluted-wasteland",
     "playerCount": 3,
     "difficulty": "insane",
-    "tags": ["trio", "working", "NST"],
+    "tags": [
+      "trio",
+      "working",
+      "NST"
+    ],
     "quests": [],
-    "authors": ["Techware", "rares06520", "mr.kalvet"],
+    "authors": [
+      "Techware",
+      "rares06520",
+      "mr.kalvet"
+    ],
     "indexedOn": "2025-08-05"
   },
   {
     "id": "10",
     "title": "Silly Quickdraw",
     "description": "Best coin grind strat and no special towers",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1qHP0G-dXLSp7vtBeNs0-AvtGYSIGuLPpufXVmVxNiqU"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1qHP0G-dXLSp7vtBeNs0-AvtGYSIGuLPpufXVmVxNiqU"
+      }
+    ],
     "gamemode": "badlands",
     "playerCount": 4,
     "difficulty": "insane",
-    "tags": ["quad", "NST", "mission-quests"],
-    "quests": ["Condemned Vigilante (Fallen Cowboy)"],
-    "authors": ["Blehh"],
+    "tags": [
+      "quad",
+      "NST",
+      "mission-quests"
+    ],
+    "quests": [
+      "Condemned Vigilante (Fallen Cowboy)"
+    ],
+    "authors": [
+      "Blehh"
+    ],
     "indexedOn": "2025-08-05",
     "starred": true
   },
@@ -155,78 +280,185 @@
     "id": "11",
     "title": "Gunslinger's Nightmare",
     "description": "Rework is in progress",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1DPfNhxLbipR9p3FlXWHvAthczX7onUxVNpz-YLUvJuQ/edit?tab=t.0#heading=h.ndqo2um0rvd7"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1DPfNhxLbipR9p3FlXWHvAthczX7onUxVNpz-YLUvJuQ/edit?tab=t.0#heading=h.ndqo2um0rvd7"
+      }
+    ],
     "gamemode": "badlands",
     "playerCount": 3,
     "difficulty": "insane",
-    "tags": ["trio", "NST", "needs rework"],
+    "tags": [
+      "trio",
+      "NST",
+      "needs rework"
+    ],
     "quests": [],
-    "authors": ["artursilva", "zeezeebot", "ivan_353", "novaialm", "hurricane_pt", "supersonic8208", "carlos1132295041.", "guardvandal"],
+    "authors": [
+      "artursilva",
+      "zeezeebot",
+      "ivan_353",
+      "novaialm",
+      "hurricane_pt",
+      "supersonic8208",
+      "carlos1132295041.",
+      "guardvandal"
+    ],
     "indexedOn": "2025-08-05"
   },
   {
     "id": "12",
     "title": "Panko Warfare",
     "description": "Duo hardcore strat",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1sA5wp-4KBamCl0rS5OgKkOwzGSBuw1EMHc2cIOuJpsU/edit?tab=t.0#heading=h.satibp125qrq"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1sA5wp-4KBamCl0rS5OgKkOwzGSBuw1EMHc2cIOuJpsU/edit?tab=t.0#heading=h.satibp125qrq"
+      }
+    ],
     "gamemode": "hardcore",
     "playerCount": 2,
     "difficulty": "normal",
-    "tags": ["duo", "NST", "grind"],
-    "quests": ["Dark Radiance (Fallen Accelerator)", "Shadowforge Tinkerer (Fallen Engineer)"],
-    "authors": ["Blehh"],
+    "tags": [
+      "duo",
+      "NST",
+      "grind"
+    ],
+    "quests": [
+      "Dark Radiance (Fallen Accelerator)",
+      "Shadowforge Tinkerer (Fallen Engineer)"
+    ],
+    "authors": [
+      "Blehh"
+    ],
     "indexedOn": "2025-08-05"
   },
   {
     "id": "13",
     "title": "Brainless Souls",
     "description": "Four player strat for Lost Souls",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1hoXjvc9wucSH6ZpyZf2V8q5fTwlOXhuR6-oz6huE_m4/edit?tab=t.0#heading=h.o9oyu56ihdky"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1hoXjvc9wucSH6ZpyZf2V8q5fTwlOXhuR6-oz6huE_m4/edit?tab=t.0#heading=h.o9oyu56ihdky"
+      }
+    ],
     "gamemode": "pizza-party",
     "playerCount": 4,
     "difficulty": "insane",
-    "tags": ["quad", "NST", "ST"],
+    "tags": [
+      "quad",
+      "NST",
+      "ST"
+    ],
     "quests": [],
-    "authors": ["@legal_gato", "@adstley", "@truabgke", "@.golden_guard"],
+    "authors": [
+      "@legal_gato",
+      "@adstley",
+      "@truabgke",
+      "@.golden_guard"
+    ],
     "indexedOn": "2025-08-05"
   },
   {
     "id": "14",
     "title": "pew",
     "description": "Solo fallen speedrun",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1YvI-yD8cPOiX6NrUUs4d7wbNNFD9XEXw3aaiC1fjt2E/edit?tab=t.sfxbztqbamlr"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1YvI-yD8cPOiX6NrUUs4d7wbNNFD9XEXw3aaiC1fjt2E/edit?tab=t.sfxbztqbamlr"
+      }
+    ],
     "gamemode": "fallen",
     "playerCount": 1,
     "difficulty": "easy",
-    "tags": ["solo", "NST"],
+    "tags": [
+      "solo",
+      "NST"
+    ],
     "quests": [],
-    "authors": ["youbadmanithink", "rainyrians"],
+    "authors": [
+      "youbadmanithink",
+      "rainyrians"
+    ],
     "indexedOn": "2025-08-05"
   },
   {
     "id": "15",
     "title": "Fucketh Brawlereth (in a british accent)",
     "description": "Duo fallen strat that doesn't use brawler",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1Mj4wIw6vF6mfDMPUCDaHsEzNbo1EYjIMaRmT1n6mvww/edit?tab=t.p30r6gungqa"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1Mj4wIw6vF6mfDMPUCDaHsEzNbo1EYjIMaRmT1n6mvww/edit?tab=t.p30r6gungqa"
+      }
+    ],
     "gamemode": "fallen",
     "playerCount": 2,
     "difficulty": "easy",
-    "tags": ["duo"],
+    "tags": [
+      "duo"
+    ],
     "quests": [],
-    "authors": ["oddlypankaes", "grovepark", "volticsurge"],
+    "authors": [
+      "oddlypankaes",
+      "grovepark",
+      "volticsurge"
+    ],
     "indexedOn": "2025-08-05"
   },
   {
     "id": "16",
     "title": "Surf & Awaken",
     "description": "Hidden Wave on Summer Castle",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1MyHcpceY8nquHj7DOsaE_cb_MdFT5uuVA_S2wvmeVcg/edit?tab=t.0"}],
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1MyHcpceY8nquHj7DOsaE_cb_MdFT5uuVA_S2wvmeVcg/edit?tab=t.0"
+      }
+    ],
     "gamemode": "hidden-wave",
     "playerCount": 4,
     "difficulty": "normal",
-    "tags": ["quad", "hidden-wave"],
+    "tags": [
+      "quad",
+      "hidden-wave"
+    ],
     "quests": [],
-    "authors": ["@jojoboz123"],
+    "authors": [
+      "@jojoboz123"
+    ],
     "indexedOn": "2025-08-05"
+  },
+  {
+    "id": "17",
+    "title": "Wastelock Defense",
+    "description": "Fastest Duo PW2",
+    "docs": [
+      {
+        "name": "Special Tower Variant",
+        "url": "https://docs.google.com/document/d/1dW3lqERq5HDxqKvCEGm1UHjuepjLkCjBbnAau0GDy5s/edit?tab=t.0"
+      },
+      {
+        "name": "No Special Tower Variant",
+        "url": "https://docs.google.com/document/d/1dW3lqERq5HDxqKvCEGm1UHjuepjLkCjBbnAau0GDy5s/edit?tab=t.pwgx38h2gwaj"
+      }
+    ],
+    "gamemode": "polluted-wasteland",
+    "playerCount": 2,
+    "difficulty": "normal",
+    "tags": [
+      "duo",
+      "ST",
+      "NST"
+    ],
+    "quests": [],
+    "authors": [
+      "rainyrians",
+      "ihntox_"
+    ],
+    "indexedOn": "2025-08-07"
   }
 ]
