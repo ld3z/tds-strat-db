@@ -35,9 +35,9 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
                 <Icon icon="twemoji:glowing-star" className="w-5 h-5" />
               )}
               {strategy.povs && strategy.povs.length > 0 && (
-                <div className="relative group">
-                  <Icon icon="mdi:eye" className="w-5 h-5 text-cyan-400" />
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-slate-900 text-white text-xs rounded py-1 px-2 w-max">
+                <div className="relative">
+                  <Icon icon="mdi:eye" className="w-5 h-5 text-cyan-400 peer" />
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden peer-hover:block bg-slate-900 text-white text-xs rounded py-1 px-2 w-max">
                     Player POVs available
                   </span>
                 </div>

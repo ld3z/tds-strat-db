@@ -22,7 +22,7 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-slate-800 rounded-2xl border border-slate-700 max-w-4xl w-full max-h-[90vh] overflow-hidden">
+      <div className="bg-slate-800 rounded-2xl border border-slate-700 max-w-4xl w-full max-h-[90vh] flex flex-col">
         {/* Header */}
         <div className="bg-slate-900/80 px-6 py-4 border-b border-slate-700 flex items-center justify-between">
           <div className="flex-1">
@@ -34,9 +34,9 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
                 <Icon icon="twemoji:glowing-star" className="w-6 h-6" />
               )}
               {strategy.povs && strategy.povs.length > 0 && (
-                <div className="relative group">
-                  <Icon icon="mdi:eye" className="w-6 h-6 text-cyan-400" />
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-slate-900 text-white text-xs rounded py-1 px-2 w-max">
+                <div className="relative">
+                  <Icon icon="mdi:eye" className="w-6 h-6 text-cyan-400 peer" />
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden peer-hover:block bg-slate-900 text-white text-xs rounded py-1 px-2 w-max">
                     Player POVs available
                   </span>
                 </div>
