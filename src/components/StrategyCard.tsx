@@ -86,7 +86,7 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
         {/* Footer */}
         <div className="flex justify-between items-end text-xs text-slate-400 pt-4 border-t border-slate-700/50">
           <div className="flex-1 space-y-2 min-w-0">
-            <div className="flex items-start space-x-2">
+            <div className="flex items-start space-x-1">
               <Icon
                 icon="mdi:account-group"
                 className="w-3 h-3 mt-0.5 flex-shrink-0"
@@ -103,9 +103,9 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
               </div>
             )}
           </div>
-          <div className="flex-shrink-0 flex items-center space-x-2">
+          <div className="flex-shrink-0 flex items-center space-x-1">
             <Icon icon="mdi:calendar" className="w-3 h-3" />
-            <span>{new Date(strategy.createdAt).toLocaleDateString()}</span>
+            <span>Indexed On: {new Date(strategy.indexedOn).toLocaleDateString()}</span>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ export interface Strategy {
   tags: string[];
   quests?: string[];
   authors: string[];
-  createdAt: string;
+  indexedOn: string;
 }
 
 export interface FilterOptions {
