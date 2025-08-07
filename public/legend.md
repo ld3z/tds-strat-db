@@ -13,3 +13,7 @@ This project is a one person team and strategies have to be manually added to th
 ## 3. What does the *star* mean next to a strategy?
 
 It means that the strategy is recommended to use.
+
+## 4. "There's an eye next to the strategy!"
+
+Don't be alarmed, it's just telling you that the strategy has a linked youtube video of point of views for player(s), and can be helpful to figuring out either what went wrong or something that they did.
