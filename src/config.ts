@@ -20,22 +20,22 @@ export const difficulties = [
     bgColor: "text-green-400 bg-green-500/10",
   },
   {
-    value: "medium",
-    label: "Medium",
-    color: "text-yellow-400",
-    bgColor: "text-yellow-400 bg-yellow-500/10",
+    value: "normal",
+    label: "Normal",
+    color: "text-cyan-400",
+    bgColor: "text-cyan-400 bg-cyan-500/10",
   },
   {
     value: "hard",
     label: "Hard",
-    color: "text-orange-400",
-    bgColor: "text-orange-400 bg-orange-500/10",
-  },
-  {
-    value: "extreme",
-    label: "Extreme",
     color: "text-red-400",
     bgColor: "text-red-400 bg-red-500/10",
+  },
+  {
+    value: "insane",
+    label: "Insane",
+    color: "text-indigo-600",
+    bgColor: "text-indigo-600 bg-indigo-500/10",
   },
 ];
 
