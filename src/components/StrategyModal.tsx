@@ -121,16 +121,19 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
         </div>
 
         {/* Content */}
-        <div className="px-6 py-6 overflow-y-auto max-h-[calc(90vh-200px)]">
-          <a
-            href={strategy.docUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"
-          >
-            <Icon icon="mdi:google-docs" className="w-6 h-6" />
-            <span>View Strategy Document</span>
-          </a>
+        <div className="px-6 py-6 overflow-y-auto max-h-[calc(90vh-200px)] space-y-4">
+          {strategy.docs.map((doc) => (
+            <a
+              key={doc.url}
+              href={doc.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"
+            >
+              <Icon icon="mdi:google-docs" className="w-6 h-6" />
+              <span>{doc.name}</span>
+            </a>
+          ))}
         </div>
       </div>
     </div>

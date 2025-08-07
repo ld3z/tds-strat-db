@@ -5,11 +5,16 @@ export type GamemodeValue = (typeof gamemodes)[number]["value"];
 export type DifficultyValue = (typeof difficulties)[number]["value"];
 export type PlayerCountValue = (typeof playerCounts)[number]["value"];
 
+export interface Doc {
+  name: string;
+  url: string;
+}
+
 export interface Strategy {
   id: string;
   title: string;
   description: string;
-  docUrl: string;
+  docs: Doc[];
   gamemode: GamemodeValue;
   playerCount: number | "any";
   difficulty: DifficultyValue;

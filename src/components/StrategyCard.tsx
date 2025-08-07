@@ -108,9 +108,15 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
               </div>
             )}
           </div>
-          <div className="flex-shrink-0 flex items-center space-x-1">
-            <Icon icon="mdi:calendar" className="w-3 h-3" />
-            <span>Indexed On: {new Date(strategy.indexedOn).toLocaleDateString()}</span>
+          <div className="flex-shrink-0 flex items-center space-x-4">
+            <div className="flex items-center space-x-1">
+              <Icon icon="mdi:file-document-multiple" className="w-3 h-3" />
+              <span>{strategy.docs.length} doc{strategy.docs.length !== 1 && 's'}</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <Icon icon="mdi:calendar" className="w-3 h-3" />
+              <span>{new Date(strategy.indexedOn).toLocaleDateString()}</span>
+            </div>
           </div>
         </div>
       </div>
