@@ -185,7 +185,7 @@
     "gamemode": "pizza-party",
     "playerCount": 4,
     "difficulty": "insane",
-    "tags": ["squad", "NST", "ST"],
+    "tags": ["quad", "NST", "ST"],
     "quests": [],
     "authors": ["@legal_gato", "@adstley", "@truabgke", "@.golden_guard"],
     "indexedOn": "2025-08-05"
@@ -224,7 +224,7 @@
     "gamemode": "hidden-wave",
     "playerCount": 4,
     "difficulty": "normal",
-    "tags": ["duo", "hidden-wave"],
+    "tags": ["quad", "hidden-wave"],
     "quests": [],
     "authors": ["@jojoboz123"],
     "indexedOn": "2025-08-05"
