@@ -3,8 +3,22 @@
     "id": "1",
     "title": "Lucille Hardcore",
     "description": "Easiest NST Hardcore – 630 gems/hour! Less than 10 steps + 100% winrate",
-    "docs": [{"name": "Strategy Link", "url": "https://docs.google.com/document/d/1NOE7FtL-l8T23LbuK-XHYb3YwFhv_EkL6FnHPrcSih4/edit?tab=t.0#heading=h.5j8k7csi2use"},
-    {"name": "Player 1 POV", "url": "https://youtu.be/GygtlanTHLc"}],
+    "docs": [
+      {
+        "name": "Lucille Hardcore",
+        "url": "https://docs.google.com/document/d/1NOE7FtL-l8T23LbuK-XHYb3YwFhv_EkL6FnHPrcSih4/edit?tab=t.0#heading=h.5j8k7csi2use"
+      }
+    ],
+    "povs": [
+      {
+        "name": "Player 1 POV",
+        "url": "https://youtu.be/GygtlanTHLc"
+      },
+      {
+        "name": "Player 2 POV",
+        "url": "https://www.youtube.com/watch?v=r1v1G-bBkT0"
+      }
+    ],
     "gamemode": "hardcore",
     "playerCount": 3,
     "difficulty": "easy",

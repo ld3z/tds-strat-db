@@ -15,6 +15,7 @@ export interface Strategy {
   title: string;
   description: string;
   docs: Doc[];
+  povs: Doc[];
   gamemode: GamemodeValue;
   playerCount: number | "any";
   difficulty: DifficultyValue;

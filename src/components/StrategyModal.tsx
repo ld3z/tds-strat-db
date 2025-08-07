@@ -33,6 +33,14 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
               {strategy.starred && (
                 <Icon icon="twemoji:glowing-star" className="w-6 h-6" />
               )}
+              {strategy.povs && strategy.povs.length > 0 && (
+                <div className="relative group">
+                  <Icon icon="mdi:eye" className="w-6 h-6 text-cyan-400" />
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-slate-900 text-white text-xs rounded py-1 px-2 w-max">
+                    Player POVs available
+                  </span>
+                </div>
+              )}
             </div>
             <p className="text-slate-400 mt-1">{strategy.description}</p>
           </div>
@@ -134,6 +142,28 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
               <span>{doc.name}</span>
             </a>
           ))}
+          {strategy.povs && strategy.povs.length > 0 && (
+            <div className="mt-4">
+              <h4 className="text-sm font-medium text-cyan-400 mb-2 flex items-center space-x-2">
+                <Icon icon="mdi:eye" className="w-4 h-4" />
+                <span>Player POVs</span>
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {strategy.povs.map((pov) => (
+                  <a
+                    key={pov.url}
+                    href={pov.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-slate-700/50 hover:bg-slate-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-200 flex items-center space-x-2"
+                  >
+                    <Icon icon="mdi:youtube" className="w-6 h-6 text-red-500" />
+                    <span className="truncate">{pov.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
