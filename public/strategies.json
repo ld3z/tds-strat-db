@@ -69,7 +69,8 @@
     "tags": ["quad", "NST", "ST", "grind"],
     "quests": [],
     "authors": ["Blehh"],
-    "indexedOn": "2025-08-05"
+    "indexedOn": "2025-08-05",
+    "starred": true
   },
   {
     "id": "5",
@@ -147,7 +148,8 @@
     "tags": ["quad", "NST", "mission-quests"],
     "quests": ["Condemned Vigilante (Fallen Cowboy)"],
     "authors": ["Blehh"],
-    "indexedOn": "2025-08-05"
+    "indexedOn": "2025-08-05",
+    "starred": true
   },
   {
     "id": "11",
