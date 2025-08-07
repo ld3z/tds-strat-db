@@ -43,7 +43,7 @@ export const playerCounts = [
   { value: "1", label: "Solo (1 Player)" },
   { value: "2", label: "Duo (2 Players)" },
   { value: "3", label: "Trio (3 Players)" },
-  { value: "4", label: "Squad (4 Players)" },
+  { value: "4", label: "Quad (4 Players)" },
   { value: "any", label: "Any Players" },
 ];
 
