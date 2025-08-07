@@ -1,5 +1,8 @@
 export const gamemodes = [
-  { value: "normal", label: "Normal", icon: "mdi:play-circle" },
+  { value: "easy", label: "Easy", icon: "icon-park-solid:easy"},
+  { value: "casual", label: "Casual", icon: "mdi:play-circle" },
+  { value: "intermediate", label: "Intermediate", icon: "carbon:skill-level-intermediate" },
+  { value: "molten", label: "Molten", icon: "mdi:volcano" },
   { value: "fallen", label: "Fallen", icon: "mdi:skull" },
   { value: "hardcore", label: "Hardcore", icon: "mdi:fire" },
   {

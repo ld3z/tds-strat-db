@@ -10,7 +10,8 @@
     "tags": ["NST", "trio"],
     "quests": [],
     "authors": ["Lucille Team"],
-    "indexedOn": "2025-08-05"
+    "indexedOn": "2025-08-05",
+    "starred": true
   },
   {
     "id": "2",
@@ -67,13 +68,13 @@
   {
     "id": "6",
     "title": "Pizza Munchers",
-    "description": "4600+ coins per hour, 2350+ exp per hour, requires only 2 towers",
+    "description": "Simple NST Duo Pizza Party Strategy For Fallen Warden Mission",
     "docUrl": "https://docs.google.com/document/d/1zbY38sGIB3PkScfQSu8amxD66eAYYdPCNeQ_onDTZfE/edit?tab=t.0",
     "gamemode": "pizza-party",
     "playerCount": 2,
     "difficulty": "insane",
     "tags": ["duo", "grind"],
-    "quests": [],
+    "quests": ["Underworld Warden (Fallen Warden)"],
     "authors": ["@grimesbtw", "@eeeeee.e_e", "Electric Association"],
     "indexedOn": "2025-08-05"
   },

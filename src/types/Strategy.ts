@@ -17,6 +17,7 @@ export interface Strategy {
   quests?: string[];
   authors: string[];
   indexedOn: string;
+  starred?: boolean;
 }
 
 export interface FilterOptions {

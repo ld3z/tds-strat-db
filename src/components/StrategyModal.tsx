@@ -26,10 +26,15 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
         {/* Header */}
         <div className="bg-slate-900/80 px-6 py-4 border-b border-slate-700 flex items-center justify-between">
           <div className="flex-1">
-            <h2 className="text-2xl font-bold text-white mb-2">
-              {strategy.title}
-            </h2>
-            <p className="text-slate-400">{strategy.description}</p>
+            <div className="flex items-center space-x-3">
+              <h2 className="text-2xl font-bold text-white">
+                {strategy.title}
+              </h2>
+              {strategy.starred && (
+                <Icon icon="twemoji:glowing-star" className="w-6 h-6" />
+              )}
+            </div>
+            <p className="text-slate-400 mt-1">{strategy.description}</p>
           </div>
           <div className="flex items-center space-x-3 ml-6">
             <button

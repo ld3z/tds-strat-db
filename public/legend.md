@@ -1,4 +1,4 @@
-# FAQ
+# FAQ:
 
 ## 1. Why is my strategy not listed here?
 

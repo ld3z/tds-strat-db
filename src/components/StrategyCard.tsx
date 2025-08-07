@@ -27,10 +27,15 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
-            <h3 className="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors duration-200 mb-2">
-              {strategy.title}
-            </h3>
-            <p className="text-sm text-slate-400 line-clamp-2 leading-relaxed">
+            <div className="flex items-center space-x-2">
+              <h3 className="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors duration-200">
+                {strategy.title}
+              </h3>
+              {strategy.starred && (
+                <Icon icon="twemoji:glowing-star" className="w-5 h-5" />
+              )}
+            </div>
+            <p className="text-sm text-slate-400 line-clamp-2 leading-relaxed mt-2">
               {strategy.description}
             </p>
           </div>
