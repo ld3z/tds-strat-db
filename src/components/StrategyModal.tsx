@@ -76,7 +76,7 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
 
             <div className="flex items-center space-x-2 text-slate-400">
               <Icon icon="mdi:calendar" className="w-4 h-4" />
-              <span>{new Date(strategy.createdAt).toLocaleDateString()}</span>
+              <span>Indexed On: {new Date(strategy.indexedOn).toLocaleDateString()}</span>
             </div>
           </div>
 
