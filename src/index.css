@@ -66,3 +66,21 @@ body {
   font-style: italic;
   color: #94a3b8;
 }
+
+.markdown-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.markdown-content::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+.markdown-content::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 10px;
+}
+
+.markdown-content::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}

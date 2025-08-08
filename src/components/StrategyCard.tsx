@@ -32,7 +32,15 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
                 {strategy.title}
               </h3>
               {strategy.starred && (
-                <Icon icon="twemoji:glowing-star" className="w-5 h-5" />
+                <div className="relative">
+                  <Icon
+                    icon="twemoji:glowing-star"
+                    className="w-5 h-5 peer"
+                  />
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden peer-hover:block bg-slate-900 text-white text-xs rounded py-1 px-2 w-max">
+                    Recommended
+                  </span>
+                </div>
               )}
               {strategy.povs && strategy.povs.length > 0 && (
                 <div className="relative">
