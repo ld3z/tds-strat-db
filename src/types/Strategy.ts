@@ -24,6 +24,7 @@ export interface Strategy {
   authors: string[];
   indexedOn: string;
   starred?: boolean;
+  stratImg?: string;
 }
 
 export interface FilterOptions {

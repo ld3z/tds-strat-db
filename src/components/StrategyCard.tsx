@@ -18,12 +18,20 @@ interface StrategyCardProps {
 const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
   const gamemodeIcon = getGamemodeIcon(strategy.gamemode);
 
+  const stratImgUrl = strategy.stratImg ? `${import.meta.env.BASE_URL}${strategy.stratImg}` : null;
+
   return (
     <div
       onClick={onClick}
-      className="bg-slate-800/60 backdrop-blur-sm rounded-xl border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 cursor-pointer group hover:shadow-xl hover:shadow-blue-500/10 hover:scale-[1.02]"
+      className="relative bg-slate-800/60 backdrop-blur-sm rounded-xl border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 cursor-pointer group hover:shadow-xl hover:shadow-blue-500/10 hover:scale-[1.02] overflow-hidden"
     >
-      <div className="p-6">
+      {stratImgUrl && (
+        <>
+          <img src={stratImgUrl} alt={strategy.title} className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/50 to-transparent" />
+        </>
+      )}
+      <div className="relative p-6 flex flex-col h-full">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
@@ -103,6 +111,9 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
             )}
           </div>
         )}
+
+        {/* Spacer */}
+        <div className="flex-grow" />
 
         {/* Footer */}
         <div className="flex justify-between items-end text-xs text-slate-400 pt-4 border-t border-slate-700/50">
