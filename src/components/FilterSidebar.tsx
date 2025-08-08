@@ -41,16 +41,17 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
   return (
     <>
       <aside 
-        className={`fixed top-0 left-0 z-40 w-80 h-full bg-slate-800/90 backdrop-blur-sm border-r border-slate-700/50 p-6 overflow-y-auto transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:w-80 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-        <div className="flex justify-between items-center mb-6 md:hidden">
-          <h2 className="text-lg font-semibold text-white">Filters</h2>
-          <button onClick={onClose} className="text-slate-400 hover:text-white">
-            <Icon icon="mdi:close" className="w-6 h-6" />
-          </button>
-        </div>
-        <div className="space-y-6">
-          {/* Search */}
-          <div>
+        className={`fixed top-0 left-0 z-40 w-80 h-full bg-slate-800/90 backdrop-blur-sm border-r border-slate-700/50 transition-transform duration-300 ease-in-out md:sticky md:top-0 md:h-screen md:flex-shrink-0 md:translate-x-0 md:w-80 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className="flex flex-col h-full">
+          <div className="flex justify-between items-center mb-6 p-6 md:hidden">
+            <h2 className="text-lg font-semibold text-white">Filters</h2>
+            <button onClick={onClose} className="text-slate-400 hover:text-white">
+              <Icon icon="mdi:close" className="w-6 h-6" />
+            </button>
+          </div>
+          <div className="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
+            {/* Search */}
+            <div>
             <label className="block text-sm font-medium text-slate-300 mb-2">
               Search Strategies
             </label>
@@ -132,7 +133,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
           <div>
             <h3 className="text-sm font-medium text-slate-300 mb-3 flex items-center space-x-2">
               <Icon icon="mdi:flash" className="w-4 h-4" />
-              <span>Difficulty</span>
+              <span>Map Difficulty</span>
             </h3>
             <div className="space-y-2">
               {difficulties.map(difficulty => (
@@ -156,7 +157,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
                 <Icon icon="mdi:tag" className="w-4 h-4" />
                 <span>Tags</span>
               </h3>
-              <div className="space-y-2 max-h-40 overflow-y-auto">
+              <div className="space-y-2 max-h-40 overflow-y-auto custom-scrollbar">
                 {allTags.map(tag => (
                   <label key={tag} className="flex items-center space-x-3 cursor-pointer group">
                     <input
@@ -179,7 +180,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
                 <Icon icon="mdi:sword-cross" className="w-4 h-4" />
                 <span>Quests</span>
               </h3>
-              <div className="space-y-2 max-h-40 overflow-y-auto">
+              <div className="space-y-2 max-h-40 overflow-y-auto custom-scrollbar">
                 {allQuests.map(quest => (
                   <label key={quest} className="flex items-center space-x-3 cursor-pointer group">
                     <input
@@ -194,6 +195,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
               </div>
             </div>
           )}
+          </div>
         </div>
       </aside>
       {isOpen && <div onClick={onClose} className="fixed inset-0 bg-black/50 z-30 md:hidden" />}
