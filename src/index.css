@@ -102,3 +102,7 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #64748b;
 }
+
+.no-scroll {
+  overflow: hidden;
+}
