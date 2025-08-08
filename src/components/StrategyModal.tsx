@@ -10,6 +10,7 @@ import {
   getGamemodeIcon,
   getDifficultyLabel,
   getGamemodeLabel,
+  mapImages,
 } from "../config";
 
 interface StrategyModalProps {
@@ -19,14 +20,22 @@ interface StrategyModalProps {
 
 const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
   const gamemodeIcon = getGamemodeIcon(strategy.gamemode);
+  const stratImgUrl = mapImages[strategy.map] ? `${import.meta.env.BASE_URL}${mapImages[strategy.map]}` : null;
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-slate-800 rounded-2xl border border-slate-700 max-w-4xl w-full max-h-[90vh] flex flex-col">
+      <div className="bg-slate-800 rounded-2xl border border-slate-700 max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden">
+        {stratImgUrl && (
+          <div className="relative h-48">
+            <img src={stratImgUrl} alt={strategy.title} className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-800 via-slate-800/50 to-transparent" />
+          </div>
+        )}
         {/* Header */}
-        <div className="bg-slate-900/80 px-6 py-4 border-b border-slate-700 flex items-center justify-between">
-          <div className="flex-1">
-            <div className="flex items-center space-x-3">
+        <div className={`px-6 py-4 ${stratImgUrl ? 'relative -mt-16' : 'bg-slate-900/80 border-b border-slate-700'}`}>
+          <div className="flex items-end justify-between">
+            <div className="flex-1">
+              <div className="flex items-center space-x-3">
               <h2 className="text-2xl font-bold text-white">
                 {strategy.title}
               </h2>
@@ -51,14 +60,15 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
               )}
             </div>
             <p className="text-slate-400 mt-1">{strategy.description}</p>
-          </div>
-          <div className="flex items-center space-x-3 ml-6">
-            <button
-              onClick={onClose}
-              className="p-2 hover:bg-slate-700 text-slate-400 hover:text-white rounded-lg transition-colors duration-200"
-            >
-              <Icon icon="mdi:close" className="w-5 h-5" />
-            </button>
+            </div>
+            <div className="flex items-center space-x-3 ml-6">
+              <button
+                onClick={onClose}
+                className="p-2 bg-slate-900/50 hover:bg-slate-700/50 text-slate-300 hover:text-white rounded-full transition-colors duration-200"
+              >
+                <Icon icon="mdi:close" className="w-6 h-6" />
+              </button>
+            </div>
           </div>
         </div>
 
