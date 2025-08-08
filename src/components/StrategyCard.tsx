@@ -8,6 +8,7 @@ import {
   getGamemodeIcon,
   getDifficultyLabel,
   getGamemodeLabel,
+  mapImages,
 } from "../config";
 
 interface StrategyCardProps {
@@ -18,7 +19,7 @@ interface StrategyCardProps {
 const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
   const gamemodeIcon = getGamemodeIcon(strategy.gamemode);
 
-  const stratImgUrl = strategy.stratImg ? `${import.meta.env.BASE_URL}${strategy.stratImg}` : null;
+  const stratImgUrl = mapImages[strategy.map] ? `${import.meta.env.BASE_URL}${mapImages[strategy.map]}` : null;
 
   return (
     <div

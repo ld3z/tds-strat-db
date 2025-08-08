@@ -36,7 +36,7 @@
     ],
     "indexedOn": "2025-08-05",
     "starred": true,
-    "stratImg": "maps/crossroads.webp"
+    "map": "crossroads"
   },
   {
     "id": "2",
@@ -62,7 +62,7 @@
       "Blehh"
     ],
     "indexedOn": "2025-08-05",
-    "stratImg": "maps/wreckedbattle.webp"
+    "map": "wreckedBattlefield"
   },
   {
     "id": "3",
@@ -96,7 +96,7 @@
       "MinhTri"
     ],
     "indexedOn": "2025-08-05",
-    "stratImg": "maps/wreckedbattle.webp"
+    "map": "wreckedBattlefield"
   },
   {
     "id": "4",
@@ -123,7 +123,7 @@
     ],
     "indexedOn": "2025-08-05",
     "starred": true,
-    "stratImg": "maps/pizzaparty.webp"
+    "map": "pizzaParty"
   },
   {
     "id": "5",
@@ -148,7 +148,7 @@
       "Kitsunal."
     ],
     "indexedOn": "2025-08-05",
-    "stratImg": "maps/pizzaparty.webp"
+    "map": "pizzaParty"
   },
   {
     "id": "6",
@@ -176,7 +176,7 @@
       "Electric Association"
     ],
     "indexedOn": "2025-08-05",
-    "stratImg": "maps/pizzaparty.webp"
+    "map": "pizzaParty"
   },
   {
     "id": "7",
@@ -203,7 +203,7 @@
       "Electric Association"
     ],
     "indexedOn": "2025-08-05",
-    "stratImg": "maps/pizzaparty.webp"
+    "map": "pizzaParty"
   },
   {
     "id": "8",
@@ -229,7 +229,7 @@
       "artemcrytich"
     ],
     "indexedOn": "2025-08-05",
-    "stratImg": "maps/pollutedwasteland.webp"
+    "map": "pollutedWasteland"
   },
   {
     "id": "9",
@@ -256,7 +256,7 @@
       "mr.kalvet"
     ],
     "indexedOn": "2025-08-05",
-    "stratImg": "maps/pollutedwasteland.webp"
+    "map": "pollutedWasteland"
   },
   {
     "id": "10",
@@ -284,7 +284,7 @@
     ],
     "indexedOn": "2025-08-05",
     "starred": true,
-    "stratImg": "maps/badlands.webp"
+    "map": "badlands"
   },
   {
     "id": "11",
@@ -316,7 +316,7 @@
       "guardvandal"
     ],
     "indexedOn": "2025-08-05",
-    "stratImg": "maps/badlands.webp"
+    "map": "badlands"
   },
   {
     "id": "12",
@@ -344,7 +344,7 @@
       "Blehh"
     ],
     "indexedOn": "2025-08-05",
-    "stratImg": "maps/wreckedbattle.webp"
+    "map": "wreckedBattlefield"
   },
   {
     "id": "13",
@@ -372,7 +372,7 @@
       "@.golden_guard"
     ],
     "indexedOn": "2025-08-05",
-    "stratImg": "maps/pizzaparty.webp"
+    "map": "pizzaParty"
   },
   {
     "id": "14",
@@ -397,7 +397,7 @@
       "rainyrians"
     ],
     "indexedOn": "2025-08-05",
-    "stratImg": "maps/retrostainedtemple.webp"
+    "map": "retroStainedTemple"
   },
   {
     "id": "15",
@@ -422,7 +422,7 @@
       "volticsurge"
     ],
     "indexedOn": "2025-08-05",
-    "stratImg": "maps/retrostainedtemple.webp"
+    "map": "retroStainedTemple"
   },
   {
     "id": "16",
@@ -446,7 +446,7 @@
       "@jojoboz123"
     ],
     "indexedOn": "2025-08-05",
-    "stratImg": "maps/summercastle.webp"
+    "map": "summerCastle"
   },
   {
     "id": "17",
@@ -476,6 +476,6 @@
       "ihntox_"
     ],
     "indexedOn": "2025-08-07",
-    "stratImg": "maps/pollutedwasteland.webp"
+    "map": "pollutedWasteland"
   }
 ]

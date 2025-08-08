@@ -78,3 +78,13 @@ export const getPlayerCountLabel = (playerCount: string | number) => {
     `${playerCount} Player${playerCount !== 1 ? "s" : ""}`
   );
 };
+
+export const mapImages: Record<string, string> = {
+  "crossroads": "maps/crossroads.webp",
+  "pizzaParty": "maps/pizzaparty.webp",
+  "pollutedWasteland": "maps/pollutedwasteland.webp",
+  "summerCastle": "maps/summercastle.webp",
+  "retroStainedTemple": "maps/retrostainedtemple.webp",
+  "wreckedBattlefield": "maps/wreckedbattle.webp",
+  "badlands": "maps/badlands.webp"
+};
