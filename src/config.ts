@@ -37,8 +37,8 @@ export const difficulties = [
   {
     value: "insane",
     label: "Insane",
-    color: "text-indigo-600",
-    bgColor: "text-indigo-600 bg-indigo-500/10",
+    color: "text-violet-400",
+    bgColor: "text-violet-400 bg-indigo-400/10",
   },
 ];
 
