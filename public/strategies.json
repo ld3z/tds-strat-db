@@ -433,8 +433,18 @@
     "description": "Duo fallen strat that doesn't use brawler",
     "docs": [
       {
-        "name": "Strategy Link",
-        "url": "https://docs.google.com/document/d/1Mj4wIw6vF6mfDMPUCDaHsEzNbo1EYjIMaRmT1n6mvww/edit?tab=t.p30r6gungqa"
+        "name": "Level 30+",
+        "url": "https://docs.google.com/document/d/1Mj4wIw6vF6mfDMPUCDaHsEzNbo1EYjIMaRmT1n6mvww/edit?tab=t.rzt1vw2rp38y#heading=h.dmty25k1vuyw"
+      },
+      {
+        "name": "Level 50+",
+        "url": "https://docs.google.com/document/d/1Mj4wIw6vF6mfDMPUCDaHsEzNbo1EYjIMaRmT1n6mvww/edit?tab=t.p30r6gungqa#heading=h.ejbtkzffkx4m"
+      }
+    ],
+    "povs": [
+      {
+        "name": "Lvl 30+ Player 1",
+        "url": "https://youtu.be/d7RBe5nogFY"
       }
     ],
     "gamemode": "fallen",
