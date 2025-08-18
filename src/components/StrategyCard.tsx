@@ -19,16 +19,22 @@ interface StrategyCardProps {
 const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
   const gamemodeIcon = getGamemodeIcon(strategy.gamemode);
 
-  const stratImgUrl = mapImages[strategy.map] ? `${import.meta.env.BASE_URL}${mapImages[strategy.map]}` : null;
+  const stratImgUrl = mapImages[strategy.map]
+    ? `${import.meta.env.BASE_URL}${mapImages[strategy.map]}`
+    : null;
 
   return (
     <div
       onClick={onClick}
-      className="relative bg-slate-800/60 backdrop-blur-sm rounded-xl border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 cursor-pointer group hover:shadow-xl hover:shadow-blue-500/10 hover:scale-[1.02] overflow-hidden"
+      className="relative bg-slate-800/80 rounded-xl border border-slate-700/50 hover:border-sky-500/50 transition-all duration-300 cursor-pointer group hover:shadow-2xl hover:shadow-sky-500/10 hover:scale-[1.02] overflow-hidden"
     >
       {stratImgUrl && (
         <>
-          <img src={stratImgUrl} alt={strategy.title} className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300" />
+          <img
+            src={stratImgUrl}
+            alt={strategy.title}
+            className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-all duration-300 group-hover:scale-110"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/50 to-transparent" />
         </>
       )}
@@ -36,25 +42,25 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
-            <div className="flex items-center space-x-2">
-              <h3 className="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors duration-200">
+            <div className="flex items-center space-x-3">
+              <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-sky-400 to-blue-500 transition-colors duration-200">
                 {strategy.title}
               </h3>
               {strategy.starred && (
                 <div className="relative">
-                  <Icon
-                    icon="twemoji:glowing-star"
-                    className="w-5 h-5 peer"
-                  />
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden peer-hover:block bg-slate-900 text-white text-xs rounded py-1 px-2 w-max">
+                  <Icon icon="twemoji:glowing-star" className="w-6 h-6 peer" />
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden peer-hover:block bg-slate-900 text-white text-xs rounded py-1 px-2 w-max shadow-lg">
                     Recommended
                   </span>
                 </div>
               )}
               {strategy.povs && strategy.povs.length > 0 && (
                 <div className="relative">
-                  <Icon icon="mdi:eye" className="w-5 h-5 text-cyan-400 peer" />
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden peer-hover:block bg-slate-900 text-white text-xs rounded py-1 px-2 w-max">
+                  <Icon
+                    icon="mdi:eye"
+                    className="w-6 h-6 text-cyan-400 peer"
+                  />
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden peer-hover:block bg-slate-900 text-white text-xs rounded py-1 px-2 w-max shadow-lg">
                     Player POVs available
                   </span>
                 </div>
@@ -67,30 +73,39 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
         </div>
 
         {/* Meta Information */}
-        <div className="flex items-center space-x-4 mb-4 text-sm">
-          <div className="flex items-center space-x-1 text-slate-300">
-            <Icon icon={gamemodeIcon} className="w-4 h-4 text-blue-400" />
-            <span>{getGamemodeLabel(strategy.gamemode)}</span>
-          </div>
-
-          <div className="flex items-center space-x-1 text-slate-300">
+        <div className="flex items-center justify-between bg-slate-900/50 p-3 rounded-lg mb-4 border border-slate-700/50">
+          <div className="flex items-center space-x-2 text-slate-300 min-w-0">
             <Icon
-              icon="mdi:account-group"
-              className="w-4 h-4 text-purple-400"
+              icon={gamemodeIcon}
+              className="w-5 h-5 text-sky-400 flex-shrink-0"
             />
-            <span>
-              {strategy.playerCount === "any" ? "Any" : strategy.playerCount}{" "}
-              player
-              {strategy.playerCount !== 1 && strategy.playerCount !== "any"
-                ? "s"
-                : ""}
+            <span className="font-medium truncate">
+              {getGamemodeLabel(strategy.gamemode)}
             </span>
           </div>
-
-          <div
-            className={`px-2 py-1 rounded-md text-xs font-medium ${getDifficultyColor(strategy.difficulty)}`}
-          >
-            {getDifficultyLabel(strategy.difficulty)}
+          <div className="flex items-center space-x-4 flex-shrink-0">
+            <div className="flex items-center space-x-2 text-slate-300">
+              <Icon
+                icon="mdi:account-group"
+                className="w-5 h-5 text-teal-400"
+              />
+              <span className="font-medium whitespace-nowrap">
+                {strategy.playerCount === "any"
+                  ? "Any"
+                  : strategy.playerCount}{" "}
+                Player
+                {strategy.playerCount !== 1 &&
+                  strategy.playerCount !== "any" &&
+                  "s"}
+              </span>
+            </div>
+            <div
+              className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider ${getDifficultyColor(
+                strategy.difficulty
+              )}`}
+            >
+              {getDifficultyLabel(strategy.difficulty).toUpperCase()}
+            </div>
           </div>
         </div>
 
@@ -100,13 +115,13 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
             {strategy.tags.slice(0, 4).map((tag) => (
               <span
                 key={tag}
-                className="px-2 py-1 bg-slate-700/50 text-slate-300 text-xs rounded-md border border-slate-600/50"
+                className="px-2.5 py-1 bg-sky-500/10 text-sky-300 text-xs rounded-full border border-sky-500/20"
               >
                 {tag}
               </span>
             ))}
             {strategy.tags.length > 4 && (
-              <span className="px-2 py-1 bg-slate-700/50 text-slate-400 text-xs rounded-md border border-slate-600/50">
+              <span className="px-2.5 py-1 bg-slate-700/50 text-slate-400 text-xs rounded-full border border-slate-600/50">
                 +{strategy.tags.length - 4} more
               </span>
             )}
@@ -119,31 +134,37 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
         {/* Footer */}
         <div className="flex justify-between items-end text-xs text-slate-400 pt-4 border-t border-slate-700/50">
           <div className="flex-1 space-y-2 min-w-0">
-            <div className="flex items-start space-x-1">
+            <div className="flex items-center space-x-2">
               <Icon
-                icon="mdi:account-group"
-                className="w-3 h-3 mt-0.5 flex-shrink-0"
+                icon="mdi:account-circle"
+                className="w-4 h-4 flex-shrink-0"
               />
-              <span className="truncate">{strategy.authors.join(", ")}</span>
+              <span className="truncate font-medium">
+                {strategy.authors.join(", ")}
+              </span>
             </div>
             {strategy.quests && strategy.quests.length > 0 && (
-              <div className="flex items-start space-x-2 text-amber-400">
+              <div className="flex items-center space-x-2 text-amber-400">
                 <Icon
                   icon="mdi:sword-cross"
-                  className="w-3 h-3 mt-0.5 flex-shrink-0"
+                  className="w-4 h-4 flex-shrink-0"
                 />
-                <span className="truncate">{strategy.quests.join(", ")}</span>
+                <span className="truncate font-medium">
+                  {strategy.quests.join(", ")}
+                </span>
               </div>
             )}
           </div>
           <div className="flex-shrink-0 flex items-center space-x-4">
-            <div className="flex items-center space-x-1">
-              <Icon icon="mdi:file-document-multiple" className="w-3 h-3" />
-              <span>{strategy.docs.length} doc{strategy.docs.length !== 1 && 's'}</span>
+            <div className="flex items-center space-x-1.5">
+              <Icon icon="mdi:file-document-multiple" className="w-4 h-4" />
+              <span className="font-semibold">{strategy.docs.length}</span>
             </div>
-            <div className="flex items-center space-x-1">
-              <Icon icon="mdi:calendar" className="w-3 h-3" />
-              <span>{new Date(strategy.indexedOn).toLocaleDateString()}</span>
+            <div className="flex items-center space-x-1.5">
+              <Icon icon="mdi:calendar-clock" className="w-4 h-4" />
+              <span className="font-semibold">
+                {new Date(strategy.indexedOn).toLocaleDateString()}
+              </span>
             </div>
           </div>
         </div>
