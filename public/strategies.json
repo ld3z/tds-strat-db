@@ -515,5 +515,60 @@
     ],
     "indexedOn": "2025-08-07",
     "map": "pollutedWasteland"
+  },
+  {
+    "id": "18",
+    "title": "Cheap Siege",
+    "description": "NST Trio Hardcore",
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1jK_CsAx4t2sYBcQ8IcyRUm0kTDQHyO0CnX7h0x26Ly8/edit?usp=sharing"
+      }
+    ],
+    "gamemode": "hardcore",
+    "playerCount": 3,
+    "difficulty": "normal",
+    "tags": [
+      "trio",
+      "NST"
+    ],
+    "quests": [],
+    "authors": [
+      "rainyrians",
+      "wuatt",
+      "godhei1127"
+    ],
+    "indexedOn": "2025-08-17",
+    "map": "wreckedBattlefield"
+  },
+  {
+    "id": "19",
+    "title": "Void Cats",
+    "description": "Trio Hardcore that's well rounded",
+    "docs": [
+      {
+        "name": "Strategy Link",
+        "url": "https://docs.google.com/document/d/1eROflh2EceE6rtKlM8L4cNO8ufToSKfwDxyPLyybFbU/edit?tab=t.uui56uszy5q"
+      }
+    ],
+    "gamemode": "hardcore",
+    "playerCount": 3,
+    "difficulty": "normal",
+    "tags": [
+      "trio",
+      "NST",
+      "ST",
+      "grind",
+      "mission-quests"
+    ],
+    "quests": [],
+    "authors": [
+      "rainyrians",
+      "wuatt",
+      "godhei1127"
+    ],
+    "indexedOn": "2025-08-17",
+    "map": "fourSeasons"
   }
 ]

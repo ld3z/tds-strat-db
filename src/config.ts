@@ -86,5 +86,6 @@ export const mapImages: Record<string, string> = {
   "summerCastle": "maps/summercastle.webp",
   "retroStainedTemple": "maps/retrostainedtemple.webp",
   "wreckedBattlefield": "maps/wreckedbattle.webp",
-  "badlands": "maps/badlands.webp"
+  "badlands": "maps/badlands.webp",
+  "fourSeasons": "maps/fourseasons.webp"
 };
