@@ -13,20 +13,36 @@ interface UserData {
   title: string;
 }
 
+const parseDuration = (duration: string): number => {
+  const value = parseInt(duration.slice(0, -1));
+  const unit = duration.slice(-1).toLowerCase();
+
+  switch (unit) {
+    case 'm':
+      return value * 60 * 1000; // minutes to milliseconds
+    case 'h':
+      return value * 60 * 60 * 1000; // hours to milliseconds
+    case 'd':
+      return value * 24 * 60 * 60 * 1000; // days to milliseconds
+    default:
+      return 0;
+  }
+};
+
+const cacheDuration = parseDuration('1m'); // put time here
+
 const Credits: React.FC = () => {
   const [users, setUsers] = useState<UserData[]>([]);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const fetchUsers = async () => {
       const cacheKey = 'robloxUsersCache';
-      const cacheDuration = 24 * 60 * 60 * 1000; // 24 hours
 
       try {
         const cachedData = localStorage.getItem(cacheKey);
         if (cachedData) {
           const { timestamp, data } = JSON.parse(cachedData);
-          if (Date.now() - timestamp < cacheDuration) {
+          if (Date.now() - timestamp < cacheDuration && cacheDuration > 0) {
             setUsers(data);
             setLoading(false);
             return;
