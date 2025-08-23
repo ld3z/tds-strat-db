@@ -29,7 +29,7 @@ const parseDuration = (duration: string): number => {
   }
 };
 
-const cacheDuration = parseDuration('1m'); // put time here
+const cacheDuration = parseDuration('10h'); // put time here
 
 const Credits: React.FC = () => {
   const [users, setUsers] = useState<UserData[]>([]);
