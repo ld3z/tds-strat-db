@@ -2,6 +2,7 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 import { useStrategy } from '../context/StrategyContext';
 import { gamemodes, difficulties, playerCounts } from '../config';
+import FilterGroup from './FilterGroup';
 
 interface FilterSidebarProps {
   isOpen: boolean;
@@ -43,158 +44,91 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
       <aside 
         className={`fixed top-0 left-0 z-40 w-80 h-full bg-slate-800/90 backdrop-blur-sm border-r border-slate-700/50 transition-transform duration-300 ease-in-out md:sticky md:top-0 md:h-screen md:flex-shrink-0 md:translate-x-0 md:w-80 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex flex-col h-full">
-          <div className="flex justify-between items-center mb-6 p-6 md:hidden">
-            <h2 className="text-lg font-semibold text-white">Filters</h2>
-            <button onClick={onClose} className="text-slate-400 hover:text-white">
+          <div className="flex justify-between items-center p-6 border-b border-slate-700/50">
+            <h2 className="text-lg font-semibold text-white flex items-center space-x-2">
+              <Icon icon="mdi:filter-variant" />
+              <span>Filters</span>
+            </h2>
+            <button onClick={onClose} className="text-slate-400 hover:text-white md:hidden">
               <Icon icon="mdi:close" className="w-6 h-6" />
             </button>
           </div>
-          <div className="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
+          
+          <div className="p-6 space-y-4">
             {/* Search */}
-            <div>
-            <label className="block text-sm font-medium text-slate-300 mb-2">
-              Search Strategies
-            </label>
             <div className="relative">
-              <Icon icon="mdi:magnify" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
+              <Icon icon="mdi:magnify" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
               <input
                 type="text"
                 value={filters.search}
                 onChange={(e) => setFilters({ search: e.target.value })}
-                placeholder="Search by title, author, tags..."
+                placeholder="Search strategies..."
                 className="w-full pl-10 pr-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
+
+            {/* Results Count */}
+            <div className="bg-slate-700/30 rounded-lg p-3 text-center">
+              <p className="text-sm text-slate-300">
+                Showing <span className="font-bold text-white">{filteredStrategies.length}</span> of <span className="font-bold text-white">{strategies.length}</span> strategies
+              </p>
+              {hasActiveFilters && (
+                <button
+                  onClick={clearFilters}
+                  className="mt-2 text-xs text-blue-400 hover:text-blue-300 flex items-center justify-center w-full space-x-1"
+                >
+                  <Icon icon="mdi:close-circle-outline" className="w-4 h-4" />
+                  <span>Clear all filters</span>
+                </button>
+              )}
+            </div>
           </div>
 
-          {/* Results Count */}
-          <div className="bg-slate-700/30 rounded-lg p-3">
-            <div className="flex items-center space-x-2">
-              <Icon icon="mdi:filter" className="w-4 h-4 text-blue-400" />
-              <span className="text-sm text-slate-300">
-                <span className="font-medium text-white">{filteredStrategies.length}</span> of <span className="font-medium text-white">{strategies.length}</span> strategies
-              </span>
-            </div>
-            {hasActiveFilters && (
-              <button
-                onClick={clearFilters}
-                className="mt-2 text-xs text-blue-400 hover:text-blue-300 flex items-center space-x-1"
-              >
-                <Icon icon="mdi:close" className="w-3 h-3" />
-                <span>Clear all filters</span>
-              </button>
+          <div className="flex-1 overflow-y-auto px-6 custom-scrollbar border-t border-slate-700/50">
+            <div className="py-4">
+            <FilterGroup
+              title="Gamemode"
+              icon="mdi:gamepad-variant"
+              options={gamemodes}
+              selectedValues={filters.gamemode}
+              onChange={(value) => handleFilterChange('gamemode', value)}
+              defaultOpen={true}
+            />
+            <FilterGroup
+              title="Player Count"
+              icon="mdi:account-group"
+              options={playerCounts}
+              selectedValues={filters.playerCount}
+              onChange={(value) => handleFilterChange('playerCount', value)}
+              defaultOpen={true}
+            />
+            <FilterGroup
+              title="Map Difficulty"
+              icon="mdi:flash"
+              options={difficulties}
+              selectedValues={filters.difficulty}
+              onChange={(value) => handleFilterChange('difficulty', value)}
+              defaultOpen={true}
+            />
+            {allTags.length > 0 && (
+              <FilterGroup
+                title="Tags"
+                icon="mdi:tag"
+                options={allTags.map(t => ({ value: t, label: t }))}
+                selectedValues={filters.tags}
+                onChange={(value) => handleFilterChange('tags', value)}
+              />
             )}
-          </div>
-
-          {/* Gamemode Filter */}
-          <div>
-            <h3 className="text-sm font-medium text-slate-300 mb-3 flex items-center space-x-2">
-              <Icon icon="mdi:gamepad-variant" className="w-4 h-4" />
-              <span>Gamemode</span>
-            </h3>
-            <div className="space-y-2">
-              {gamemodes.map(gamemode => (
-                <label key={gamemode.value} className="flex items-center space-x-3 cursor-pointer group">
-                  <input
-                    type="checkbox"
-                    checked={filters.gamemode.includes(gamemode.value)}
-                    onChange={() => handleFilterChange('gamemode', gamemode.value)}
-                    className="w-4 h-4 text-blue-600 bg-slate-700 border-slate-600 rounded focus:ring-blue-500 focus:ring-2"
-                  />
-                  <Icon icon={gamemode.icon} className="w-4 h-4 text-slate-400 group-hover:text-blue-400" />
-                  <span className="text-sm text-slate-300 group-hover:text-white">{gamemode.label}</span>
-                </label>
-              ))}
+            {allQuests.length > 0 && (
+              <FilterGroup
+                title="Quests"
+                icon="mdi:sword-cross"
+                options={allQuests.map(q => ({ value: q, label: q }))}
+                selectedValues={filters.quests}
+                onChange={(value) => handleFilterChange('quests', value)}
+              />
+            )}
             </div>
-          </div>
-
-          {/* Player Count Filter */}
-          <div>
-            <h3 className="text-sm font-medium text-slate-300 mb-3 flex items-center space-x-2">
-              <Icon icon="mdi:account-group" className="w-4 h-4" />
-              <span>Player Count</span>
-            </h3>
-            <div className="space-y-2">
-              {playerCounts.map(count => (
-                <label key={count.value} className="flex items-center space-x-3 cursor-pointer group">
-                  <input
-                    type="checkbox"
-                    checked={filters.playerCount.includes(count.value)}
-                    onChange={() => handleFilterChange('playerCount', count.value)}
-                    className="w-4 h-4 text-blue-600 bg-slate-700 border-slate-600 rounded focus:ring-blue-500 focus:ring-2"
-                  />
-                  <span className="text-sm text-slate-300 group-hover:text-white">{count.label}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-
-          {/* Difficulty Filter */}
-          <div>
-            <h3 className="text-sm font-medium text-slate-300 mb-3 flex items-center space-x-2">
-              <Icon icon="mdi:flash" className="w-4 h-4" />
-              <span>Map Difficulty</span>
-            </h3>
-            <div className="space-y-2">
-              {difficulties.map(difficulty => (
-                <label key={difficulty.value} className="flex items-center space-x-3 cursor-pointer group">
-                  <input
-                    type="checkbox"
-                    checked={filters.difficulty.includes(difficulty.value)}
-                    onChange={() => handleFilterChange('difficulty', difficulty.value)}
-                    className="w-4 h-4 text-blue-600 bg-slate-700 border-slate-600 rounded focus:ring-blue-500 focus:ring-2"
-                  />
-                  <span className={`text-sm capitalize ${difficulty.color} group-hover:opacity-80`}>{difficulty.label}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-
-          {/* Tags Filter */}
-          {allTags.length > 0 && (
-            <div>
-              <h3 className="text-sm font-medium text-slate-300 mb-3 flex items-center space-x-2">
-                <Icon icon="mdi:tag" className="w-4 h-4" />
-                <span>Tags</span>
-              </h3>
-              <div className="space-y-2 max-h-40 overflow-y-auto custom-scrollbar">
-                {allTags.map(tag => (
-                  <label key={tag} className="flex items-center space-x-3 cursor-pointer group">
-                    <input
-                      type="checkbox"
-                      checked={filters.tags.includes(tag)}
-                      onChange={() => handleFilterChange('tags', tag)}
-                      className="w-4 h-4 text-blue-600 bg-slate-700 border-slate-600 rounded focus:ring-blue-500 focus:ring-2"
-                    />
-                    <span className="text-sm text-slate-300 group-hover:text-white capitalize">{tag}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Quest Filter */}
-          {allQuests.length > 0 && (
-            <div>
-              <h3 className="text-sm font-medium text-slate-300 mb-3 flex items-center space-x-2">
-                <Icon icon="mdi:sword-cross" className="w-4 h-4" />
-                <span>Quests</span>
-              </h3>
-              <div className="space-y-2 max-h-40 overflow-y-auto custom-scrollbar">
-                {allQuests.map(quest => (
-                  <label key={quest} className="flex items-center space-x-3 cursor-pointer group">
-                    <input
-                      type="checkbox"
-                      checked={filters.quests.includes(quest)}
-                      onChange={() => handleFilterChange('quests', quest)}
-                      className="w-4 h-4 text-blue-600 bg-slate-700 border-slate-600 rounded focus:ring-blue-500 focus:ring-2"
-                    />
-                    <span className="text-sm text-slate-300 group-hover:text-white capitalize">{quest}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          )}
           </div>
         </div>
       </aside>
