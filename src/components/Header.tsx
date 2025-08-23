@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, onLegendClick }) => {
       <div className="flex items-center w-full h-16 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center space-x-3">
           <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-2 rounded-lg">
-            <Icon icon="mdi:shield" className="w-6 h-6 text-white" />
+            <Icon icon="simple-icons:roblox" className="w-6 h-6 text-white" />
           </div>
           <div>
             <h1 className="text-base sm:text-xl font-bold text-white">Tower Defense Strategies</h1>
