@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
+import { Routes, Route, useNavigate, useParams, Navigate } from 'react-router-dom';
 import { StrategyProvider, useStrategy } from './context/StrategyContext';
-import Header from './components/Header';
-import FilterSidebar from './components/FilterSidebar';
-import StrategyGrid from './components/StrategyGrid';
 import StrategyModal from './components/StrategyModal';
-import LegendCard from './components/LegendCard';
 import { Strategy } from './types/Strategy';
+import Layout from './components/Layout';
+import Home from './components/Home';
+import Strategies from './pages/Strategies';
 
 const StrategyModalWrapper = () => {
   const { id } = useParams();
@@ -38,51 +37,23 @@ const StrategyModalWrapper = () => {
   return (
     <StrategyModal
       strategy={selectedStrategy}
-      onClose={() => navigate('/')}
+      onClose={() => navigate('/strategies')}
     />
   );
 };
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isLegendOpen, setIsLegendOpen] = useState(false);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (isLegendOpen) {
-      document.body.classList.add('no-scroll');
-    } else {
-      const hasModal = !!(document.querySelector('.fixed.inset-0'));
-      if (!hasModal) {
-        document.body.classList.remove('no-scroll');
-      }
-    }
-  }, [isLegendOpen]);
-
-  const handleStrategyClick = (strategy: Strategy) => {
-    navigate(`/strategy/${strategy.id}`);
-  };
-
   return (
-    <div className="h-screen flex flex-col bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      <Header 
-        onMenuClick={() => setIsSidebarOpen(true)} 
-        onLegendClick={() => setIsLegendOpen(true)}
-      />
-      
-      <div className="flex flex-1 overflow-hidden">
-        <FilterSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
-        <main className="flex-1 overflow-y-auto">
-          <StrategyGrid onStrategyClick={handleStrategyClick} />
-        </main>
-      </div>
-
+    <>
       <Routes>
-        <Route path="/strategy/:id" element={<StrategyModalWrapper />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Navigate to="/home" />} />
+          <Route path="home" element={<Home />} />
+          <Route path="strategies" element={<Strategies />} />
+        </Route>
+        <Route path="/strategies/:id" element={<StrategyModalWrapper />} />
       </Routes>
-
-      {isLegendOpen && <LegendCard onClose={() => setIsLegendOpen(false)} />}
-    </div>
+    </>
   );
 }
 
