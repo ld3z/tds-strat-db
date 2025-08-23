@@ -64,15 +64,17 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="h-screen flex flex-col bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <Header 
         onMenuClick={() => setIsSidebarOpen(true)} 
         onLegendClick={() => setIsLegendOpen(true)}
       />
       
-      <div className="flex">
+      <div className="flex flex-1 overflow-hidden">
         <FilterSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
-        <StrategyGrid onStrategyClick={handleStrategyClick} />
+        <main className="flex-1 overflow-y-auto">
+          <StrategyGrid onStrategyClick={handleStrategyClick} />
+        </main>
       </div>
 
       <Routes>

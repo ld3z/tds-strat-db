@@ -42,7 +42,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
   return (
     <>
       <aside 
-        className={`fixed top-0 left-0 z-40 w-80 h-full bg-slate-800/90 backdrop-blur-sm border-r border-slate-700/50 transition-transform duration-300 ease-in-out md:sticky md:top-0 md:h-screen md:flex-shrink-0 md:translate-x-0 md:w-80 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        className={`fixed top-0 left-0 z-40 w-80 h-full bg-slate-800/90 backdrop-blur-sm border-r border-slate-700/50 transition-transform duration-300 ease-in-out md:relative md:flex-shrink-0 md:translate-x-0 md:w-80 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex flex-col h-full">
           <div className="flex justify-between items-center p-6 border-b border-slate-700/50">
             <h2 className="text-lg font-semibold text-white flex items-center space-x-2">
