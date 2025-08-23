@@ -26,17 +26,17 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className="relative bg-slate-800/80 rounded-xl border border-slate-700/50 hover:border-sky-500/50 transition-all duration-300 cursor-pointer group hover:shadow-2xl hover:shadow-sky-500/10 hover:scale-[1.02] overflow-hidden"
+      className="relative bg-slate-800/80 rounded-xl border border-slate-700/50 hover:border-sky-500/50 transition-all duration-300 cursor-pointer group hover:shadow-2xl hover:shadow-sky-500/10 hover:scale-[1.02]"
     >
       {stratImgUrl && (
-        <>
+        <div className="absolute inset-0 rounded-xl overflow-hidden">
           <img
             src={stratImgUrl}
             alt={strategy.title}
-            className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-all duration-300 group-hover:scale-110"
+            className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-all duration-300 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/50 to-transparent" />
-        </>
+        </div>
       )}
       <div className="relative p-6 flex flex-col h-full">
         {/* Header */}
