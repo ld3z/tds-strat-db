@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.7",
+    "@heroicons/react": "^2.2.0",
     "@iconify/json": "^2.2.377",
     "@iconify/react": "^6.0.0",
     "@unocss/preset-uno": "^66.4.2",

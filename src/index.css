@@ -143,13 +143,7 @@ body {
 
 /* Improved scrolling for all platforms */
 .scroll-container {
-    -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
-}
-
-/* Prevent horizontal scrolling issues */
-.overflow-x-hidden {
-    overflow-x: hidden;
 }
 
 /* Better scrollbar for webkit browsers */
@@ -183,12 +177,5 @@ body {
     textarea,
     select {
         font-size: 16px;
-    }
-}
-
-/* Prevent overscroll bounce on iOS */
-@supports (-webkit-touch-callout: none) {
-    body {
-        overscroll-behavior-y: none;
     }
 }
