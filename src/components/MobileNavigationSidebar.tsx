@@ -80,11 +80,11 @@ const MobileNavigationSidebar: React.FC<MobileNavigationSidebarProps> = ({
   return (
     <>
       <aside
-        className={`fixed top-0 left-0 z-40 w-80 h-full bg-slate-800/95 backdrop-blur-sm border-r border-slate-700/50 transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 z-40 w-80 h-full bg-slate-800/95 backdrop-blur-sm border-r border-slate-700/50 transition-transform duration-300 ease-in-out overflow-hidden ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } md:hidden`}
       >
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-full overflow-hidden">
           {/* Header */}
           <div className="flex justify-between items-center p-6 border-b border-slate-700/50">
             <h2 className="text-lg font-semibold text-white flex items-center space-x-2">
@@ -172,7 +172,10 @@ const MobileNavigationSidebar: React.FC<MobileNavigationSidebarProps> = ({
                 </div>
               </div>
 
-              <div className="flex-1 overflow-y-auto px-6 custom-scrollbar">
+              <div
+                className="flex-1 overflow-y-auto px-6 custom-scrollbar"
+                style={{ WebkitOverflowScrolling: "touch" }}
+              >
                 <div className="py-4">
                   <FilterGroup
                     title="Gamemode"
@@ -227,7 +230,7 @@ const MobileNavigationSidebar: React.FC<MobileNavigationSidebarProps> = ({
 
           {/* Empty state for non-strategies pages */}
           {!isStrategiesPage && (
-            <div className="flex-1 flex items-center justify-center p-6">
+            <div className="flex-1 flex items-center justify-center p-6 overflow-hidden">
               <div className="text-center text-slate-400">
                 <Icon
                   icon="mdi:navigation-variant"

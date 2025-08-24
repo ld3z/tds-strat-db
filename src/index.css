@@ -1,7 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+    overflow-x: hidden;
+}
+
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: #0f172a;
-  color: #f1f5f9;
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Roboto",
+        sans-serif;
+    background: #0f172a;
+    color: #f1f5f9;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+#root {
+    height: 100%;
 }
 
 .markdown-content h1,
@@ -10,99 +36,159 @@ body {
 .markdown-content h4,
 .markdown-content h5,
 .markdown-content h6 {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
-.markdown-content h1 { font-size: 1.875rem; }
-.markdown-content h2 { font-size: 1.5rem; }
-.markdown-content h3 { font-size: 1.25rem; }
+.markdown-content h1 {
+    font-size: 1.875rem;
+}
+.markdown-content h2 {
+    font-size: 1.5rem;
+}
+.markdown-content h3 {
+    font-size: 1.25rem;
+}
 
 .markdown-content p {
-  margin-bottom: 1rem;
-  line-height: 1.7;
+    margin-bottom: 1rem;
+    line-height: 1.7;
 }
 
 .markdown-content ul,
 .markdown-content ol {
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
 }
 
 .markdown-content ul {
-  list-style-type: disc;
+    list-style-type: disc;
 }
 
 .markdown-content li {
-  margin-bottom: 0.25rem;
+    margin-bottom: 0.25rem;
 }
 
 .markdown-content code {
-  background: #1e293b;
-  padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
-  font-family: 'JetBrains Mono', 'Consolas', monospace;
-  font-size: 0.875rem;
+    background: #1e293b;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-family: "JetBrains Mono", "Consolas", monospace;
+    font-size: 0.875rem;
 }
 
 .markdown-content pre {
-  background: #1e293b;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  overflow-x: auto;
-  margin-bottom: 1rem;
+    background: #1e293b;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
 }
 
 .markdown-content pre code {
-  background: none;
-  padding: 0;
+    background: none;
+    padding: 0;
 }
 
 .markdown-content blockquote {
-  border-left: 4px solid #3b82f6;
-  padding-left: 1rem;
-  margin: 1rem 0;
-  font-style: italic;
-  color: #94a3b8;
+    border-left: 4px solid #3b82f6;
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    color: #94a3b8;
 }
 
 .markdown-content::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 .markdown-content::-webkit-scrollbar-track {
-  background: #1e293b;
-  border-radius: 10px;
+    background: #1e293b;
+    border-radius: 10px;
 }
 
 .markdown-content::-webkit-scrollbar-thumb {
-  background: #475569;
-  border-radius: 10px;
+    background: #475569;
+    border-radius: 10px;
 }
 
 .markdown-content::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+    background: #64748b;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #1e293b;
-  border-radius: 10px;
+    background: #1e293b;
+    border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #475569;
-  border-radius: 10px;
+    background: #475569;
+    border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+    background: #64748b;
 }
 
 .no-scroll {
-  overflow: hidden;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Improved scrolling for all platforms */
+.scroll-container {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+/* Prevent horizontal scrolling issues */
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+/* Better scrollbar for webkit browsers */
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgba(71, 85, 105, 0.5);
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 116, 139, 0.7);
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+    body {
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Prevent zoom on input focus on iOS */
+    input,
+    textarea,
+    select {
+        font-size: 16px;
+    }
+}
+
+/* Prevent overscroll bounce on iOS */
+@supports (-webkit-touch-callout: none) {
+    body {
+        overscroll-behavior-y: none;
+    }
 }
