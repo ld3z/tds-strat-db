@@ -1,9 +1,8 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { Strategy } from "../types/Strategy";
-import { useStrategy } from "../context/StrategyContext";
+
 import {
-  gamemodes,
   getDifficultyColor,
   getGamemodeIcon,
   getDifficultyLabel,
@@ -56,10 +55,7 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
               )}
               {strategy.povs && strategy.povs.length > 0 && (
                 <div className="relative">
-                  <Icon
-                    icon="mdi:eye"
-                    className="w-6 h-6 text-cyan-400 peer"
-                  />
+                  <Icon icon="mdi:eye" className="w-6 h-6 text-cyan-400 peer" />
                   <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden peer-hover:block bg-slate-900 text-white text-xs rounded py-1 px-2 w-max shadow-lg">
                     Player POVs available
                   </span>
@@ -90,9 +86,7 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
                 className="w-5 h-5 text-teal-400"
               />
               <span className="font-medium whitespace-nowrap">
-                {strategy.playerCount === "any"
-                  ? "Any"
-                  : strategy.playerCount}{" "}
+                {strategy.playerCount === "any" ? "Any" : strategy.playerCount}{" "}
                 Player
                 {strategy.playerCount !== 1 &&
                   strategy.playerCount !== "any" &&
@@ -101,7 +95,7 @@ const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
             </div>
             <div
               className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider ${getDifficultyColor(
-                strategy.difficulty
+                strategy.difficulty,
               )}`}
             >
               {getDifficultyLabel(strategy.difficulty).toUpperCase()}

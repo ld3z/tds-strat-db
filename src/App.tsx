@@ -45,6 +45,7 @@ const StrategyModalWrapper = () => {
   return (
     <StrategyModal
       strategy={selectedStrategy}
+      isOpen={true}
       onClose={() => navigate("/strategies")}
     />
   );

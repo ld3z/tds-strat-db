@@ -1,6 +1,7 @@
-import React from 'react';
-import Accordion from './Accordion';
-import { Icon } from '@iconify/react';
+import React from "react";
+import { Checkbox, Field, Label } from "@headlessui/react";
+import Accordion from "./Accordion";
+import { Icon } from "@iconify/react";
 
 interface FilterOption {
   value: string;
@@ -18,21 +19,44 @@ interface FilterGroupProps {
   defaultOpen?: boolean;
 }
 
-const FilterGroup: React.FC<FilterGroupProps> = ({ title, icon, options, selectedValues, onChange, defaultOpen }) => {
+const FilterGroup: React.FC<FilterGroupProps> = ({
+  title,
+  icon,
+  options,
+  selectedValues,
+  onChange,
+  defaultOpen,
+}) => {
   return (
     <Accordion title={title} icon={icon} defaultOpen={defaultOpen}>
       <div className="space-y-2 max-h-48 overflow-y-auto custom-scrollbar pr-2">
-        {options.map(option => (
-          <label key={option.value} className="flex items-center space-x-3 cursor-pointer group">
-            <input
-              type="checkbox"
+        {options.map((option) => (
+          <Field
+            key={option.value}
+            className="flex items-center space-x-3 cursor-pointer group"
+          >
+            <Checkbox
               checked={selectedValues.includes(option.value)}
               onChange={() => onChange(option.value)}
-              className="w-4 h-4 text-blue-600 bg-slate-700 border-slate-600 rounded focus:ring-blue-500 focus:ring-offset-0 focus:ring-offset-slate-800 focus:ring-2"
-            />
-            {option.icon && <Icon icon={option.icon} className="w-4 h-4 text-slate-400 group-hover:text-blue-400" />}
-            <span className={`text-sm capitalize ${option.color || 'text-slate-300 group-hover:text-white'}`}>{option.label}</span>
-          </label>
+              className="group relative w-4 h-4 bg-slate-700 border border-slate-600 rounded data-[checked]:bg-blue-600 data-[checked]:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-800 transition-colors duration-200"
+            >
+              <Icon
+                icon="mdi:check"
+                className="w-3 h-3 text-white absolute top-0.5 left-0.5 opacity-0 group-data-[checked]:opacity-100 transition-opacity duration-200"
+              />
+            </Checkbox>
+            {option.icon && (
+              <Icon
+                icon={option.icon}
+                className="w-4 h-4 text-slate-400 group-hover:text-blue-400"
+              />
+            )}
+            <Label
+              className={`text-sm capitalize cursor-pointer ${option.color || "text-slate-300 group-hover:text-white"}`}
+            >
+              {option.label}
+            </Label>
+          </Field>
         ))}
       </div>
     </Accordion>
