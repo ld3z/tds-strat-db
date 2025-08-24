@@ -1,4 +1,13 @@
 import React from "react";
+import {
+  SimpleGrid,
+  Text,
+  Center,
+  Stack,
+  Title,
+  Group,
+  Container,
+} from "@mantine/core";
 import { Icon } from "@iconify/react";
 import { useStrategy } from "../context/StrategyContext";
 import StrategyCard from "./StrategyCard";
@@ -30,6 +39,7 @@ const StrategyGrid: React.FC<StrategyGridProps> = ({ onStrategyClick }) => {
     return gamemodeOrder.indexOf(a) - gamemodeOrder.indexOf(b);
   });
 
+  // Sort strategies within each gamemode (starred first)
   for (const gamemode in groupedStrategies) {
     groupedStrategies[gamemode].sort((a, b) => {
       if (a.starred && !b.starred) return -1;
@@ -40,38 +50,61 @@ const StrategyGrid: React.FC<StrategyGridProps> = ({ onStrategyClick }) => {
 
   if (filteredStrategies.length === 0) {
     return (
-      <div className="flex items-center justify-center p-6 text-center min-h-full">
-        <div>
-          <Icon
-            icon="mdi:magnify-close"
-            className="w-16 h-16 text-slate-500 mx-auto mb-4"
-          />
-          <h3 className="text-xl font-semibold text-slate-300 mb-2">
-            No strategies found
-          </h3>
-          <p className="text-slate-400 max-w-md">
-            Try adjusting your filters or search terms to find more strategies.
-          </p>
-        </div>
-      </div>
+      <Container size="lg" py="xl">
+        <Center style={{ minHeight: 400 }}>
+          <Stack align="center" gap="md">
+            <Icon
+              icon="mdi:magnify-close"
+              style={{ width: 64, height: 64, color: "#64748b" }}
+            />
+            <Title order={3} c="gray.3">
+              No strategies found
+            </Title>
+            <Text c="dimmed" ta="center" size="sm" maw={400}>
+              Try adjusting your filters or search terms to find more
+              strategies.
+            </Text>
+          </Stack>
+        </Center>
+      </Container>
     );
   }
 
   return (
-    <div className="p-4 sm:p-6">
-      <div className="space-y-8">
+    <Container size="xl" py="xs">
+      <Stack gap="md">
         {sortedGamemodes.map((gamemode) => (
-          <section key={gamemode}>
-            <div className="flex items-center space-x-3 mb-4">
+          <Stack key={gamemode} gap="xs">
+            {/* Section Header */}
+            <Group gap="sm" mb="4px">
               <Icon
                 icon={getGamemodeIcon(gamemode)}
-                className="w-6 h-6 text-blue-400"
+                style={{ width: 24, height: 24, color: "#60a5fa" }}
               />
-              <h2 className="text-2xl font-bold text-white">
+              <Title order={2} c="white" size="xl">
                 {getGamemodeLabel(gamemode)}
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+              </Title>
+              <Text c="dimmed" size="sm">
+                ({groupedStrategies[gamemode].length}{" "}
+                {groupedStrategies[gamemode].length === 1
+                  ? "strategy"
+                  : "strategies"}
+                )
+              </Text>
+            </Group>
+
+            {/* Strategy Grid */}
+            <SimpleGrid
+              cols={{
+                base: 1,
+                sm: 2,
+                md: 2,
+                lg: 3,
+                xl: 4,
+              }}
+              spacing="xs"
+              verticalSpacing="xs"
+            >
               {groupedStrategies[gamemode].map((strategy) => (
                 <StrategyCard
                   key={strategy.id}
@@ -79,11 +112,11 @@ const StrategyGrid: React.FC<StrategyGridProps> = ({ onStrategyClick }) => {
                   onClick={() => onStrategyClick(strategy)}
                 />
               ))}
-            </div>
-          </section>
+            </SimpleGrid>
+          </Stack>
         ))}
-      </div>
-    </div>
+      </Stack>
+    </Container>
   );
 };
 

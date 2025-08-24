@@ -1,9 +1,18 @@
 import React from "react";
+import {
+  Card,
+  Image,
+  Text,
+  Badge,
+  Group,
+  Stack,
+  Title,
+  Tooltip,
+  Center,
+} from "@mantine/core";
 import { Icon } from "@iconify/react";
 import { Strategy } from "../types/Strategy";
-
 import {
-  getDifficultyColor,
   getGamemodeIcon,
   getDifficultyLabel,
   getGamemodeLabel,
@@ -17,153 +26,207 @@ interface StrategyCardProps {
 
 const StrategyCard: React.FC<StrategyCardProps> = ({ strategy, onClick }) => {
   const gamemodeIcon = getGamemodeIcon(strategy.gamemode);
-
   const stratImgUrl = mapImages[strategy.map]
     ? `${import.meta.env.BASE_URL}${mapImages[strategy.map]}`
     : null;
 
+  // Get difficulty colors to match original design
+  const getDifficultyColor = (difficulty: string) => {
+    const colorMap: Record<string, { color: string; bg: string }> = {
+      easy: { color: "#4ade80", bg: "rgba(34, 197, 94, 0.1)" },
+      normal: { color: "#22d3ee", bg: "rgba(6, 182, 212, 0.1)" },
+      hard: { color: "#f87171", bg: "rgba(239, 68, 68, 0.1)" },
+      insane: { color: "#a78bfa", bg: "rgba(99, 102, 241, 0.1)" },
+    };
+    return (
+      colorMap[difficulty] || {
+        color: "#9ca3af",
+        bg: "rgba(107, 114, 128, 0.1)",
+      }
+    );
+  };
+
   return (
-    <div
+    <Card
+      shadow="sm"
+      padding="sm"
+      radius="md"
+      withBorder
       onClick={onClick}
-      className="relative bg-slate-800/80 rounded-xl border border-slate-700/50 hover:border-sky-500/50 transition-all duration-300 cursor-pointer group hover:shadow-2xl hover:shadow-sky-500/10 hover:scale-[1.02]"
+      style={{
+        cursor: "pointer",
+        transition: "all 0.2s ease",
+        backgroundColor: "rgba(30, 41, 59, 0.8)",
+        borderColor: "rgba(100, 116, 139, 0.3)",
+        height: "fit-content",
+      }}
+      styles={{
+        root: {
+          "&:hover": {
+            transform: "translateY(-2px)",
+            boxShadow: "0 10px 25px rgba(56, 178, 172, 0.1)",
+            borderColor: "rgba(56, 178, 172, 0.5)",
+          },
+        },
+      }}
     >
+      {/* Strategy Image */}
       {stratImgUrl && (
-        <div className="absolute inset-0 rounded-xl overflow-hidden">
-          <img
+        <Card.Section>
+          <Image
             src={stratImgUrl}
             alt={strategy.title}
-            className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-all duration-300 group-hover:scale-110"
+            height={120}
+            fit="cover"
+            fallbackSrc="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDMyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjMWUyOTNiIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNjQ3NDhiIj5ObyBJbWFnZTwvdGV4dD4KPHN2Zz4="
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/50 to-transparent" />
-        </div>
+        </Card.Section>
       )}
-      <div className="relative p-6 flex flex-col h-full">
-        {/* Header */}
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex-1">
-            <div className="flex items-center space-x-3">
-              <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-sky-400 to-blue-500 transition-colors duration-200">
-                {strategy.title}
-              </h3>
-              {strategy.starred && (
-                <div className="relative">
-                  <Icon icon="twemoji:glowing-star" className="w-6 h-6 peer" />
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden peer-hover:block bg-slate-900 text-white text-xs rounded py-1 px-2 w-max shadow-lg">
-                    Recommended
-                  </span>
-                </div>
-              )}
-              {strategy.povs && strategy.povs.length > 0 && (
-                <div className="relative">
-                  <Icon icon="mdi:eye" className="w-6 h-6 text-cyan-400 peer" />
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden peer-hover:block bg-slate-900 text-white text-xs rounded py-1 px-2 w-max shadow-lg">
-                    Player POVs available
-                  </span>
-                </div>
-              )}
-            </div>
-            <p className="text-sm text-slate-400 line-clamp-2 leading-relaxed mt-2">
-              {strategy.description}
-            </p>
-          </div>
-        </div>
 
-        {/* Meta Information */}
-        <div className="flex items-center justify-between bg-slate-900/50 p-3 rounded-lg mb-4 border border-slate-700/50">
-          <div className="flex items-center space-x-2 text-slate-300 min-w-0">
+      {/* Card Content */}
+      <Stack gap="xs" mt="xs">
+        {/* Title and Star */}
+        <Group justify="space-between" align="flex-start">
+          <Title order={4} size="lg" c="white" style={{ flex: 1 }}>
+            {strategy.title}
+          </Title>
+          {strategy.starred && (
+            <Tooltip label="Recommended Strategy">
+              <Icon
+                icon="twemoji:glowing-star"
+                style={{ width: 24, height: 24, flexShrink: 0 }}
+              />
+            </Tooltip>
+          )}
+        </Group>
+
+        {/* Description */}
+        <Text size="sm" c="dimmed" lineClamp={2}>
+          {strategy.description}
+        </Text>
+
+        {/* Gamemode and Difficulty */}
+        <Group justify="space-between">
+          <Group gap="xs">
             <Icon
               icon={gamemodeIcon}
-              className="w-5 h-5 text-sky-400 flex-shrink-0"
+              style={{ width: 16, height: 16, color: "#38bdf8" }}
             />
-            <span className="font-medium truncate">
+            <Text size="sm" c="gray.3">
               {getGamemodeLabel(strategy.gamemode)}
-            </span>
+            </Text>
+          </Group>
+          <div
+            style={{
+              backgroundColor: getDifficultyColor(strategy.difficulty).bg,
+              color: getDifficultyColor(strategy.difficulty).color,
+              padding: "2px 8px",
+              borderRadius: "10px",
+              fontSize: "11px",
+              fontWeight: 700,
+              textTransform: "uppercase",
+              letterSpacing: "0.025em",
+            }}
+          >
+            {getDifficultyLabel(strategy.difficulty)}
           </div>
-          <div className="flex items-center space-x-4 flex-shrink-0">
-            <div className="flex items-center space-x-2 text-slate-300">
-              <Icon
-                icon="mdi:account-group"
-                className="w-5 h-5 text-teal-400"
-              />
-              <span className="font-medium whitespace-nowrap">
-                {strategy.playerCount === "any" ? "Any" : strategy.playerCount}{" "}
-                Player
-                {strategy.playerCount !== 1 &&
-                  strategy.playerCount !== "any" &&
-                  "s"}
-              </span>
-            </div>
-            <div
-              className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider ${getDifficultyColor(
-                strategy.difficulty,
-              )}`}
-            >
-              {getDifficultyLabel(strategy.difficulty).toUpperCase()}
-            </div>
-          </div>
-        </div>
+        </Group>
+
+        {/* Player Count */}
+        <Group gap="xs">
+          <Icon
+            icon="mdi:account-group"
+            style={{ width: 16, height: 16, color: "#2dd4bf" }}
+          />
+          <Text size="sm" c="gray.3">
+            {strategy.playerCount === "any" ? "Any" : strategy.playerCount}{" "}
+            Player
+            {strategy.playerCount !== 1 &&
+              strategy.playerCount !== "any" &&
+              "s"}
+          </Text>
+        </Group>
 
         {/* Tags */}
         {strategy.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-4">
-            {strategy.tags.slice(0, 4).map((tag) => (
-              <span
+          <Group gap="4px">
+            {strategy.tags.slice(0, 2).map((tag) => (
+              <Badge
                 key={tag}
-                className="px-2.5 py-1 bg-sky-500/10 text-sky-300 text-xs rounded-full border border-sky-500/20"
+                variant="light"
+                color="blue"
+                size="xs"
+                style={{ textTransform: "none", fontSize: "11px" }}
               >
                 {tag}
-              </span>
+              </Badge>
             ))}
-            {strategy.tags.length > 4 && (
-              <span className="px-2.5 py-1 bg-slate-700/50 text-slate-400 text-xs rounded-full border border-slate-600/50">
-                +{strategy.tags.length - 4} more
-              </span>
+            {strategy.tags.length > 2 && (
+              <Badge
+                variant="light"
+                color="gray"
+                size="xs"
+                style={{ fontSize: "11px" }}
+              >
+                +{strategy.tags.length - 2}
+              </Badge>
             )}
-          </div>
+          </Group>
         )}
 
-        {/* Spacer */}
-        <div className="flex-grow" />
-
-        {/* Footer */}
-        <div className="flex justify-between items-end text-xs text-slate-400 pt-4 border-t border-slate-700/50">
-          <div className="flex-1 space-y-2 min-w-0">
-            <div className="flex items-center space-x-2">
-              <Icon
-                icon="mdi:account-circle"
-                className="w-4 h-4 flex-shrink-0"
-              />
-              <span className="truncate font-medium">
-                {strategy.authors.join(", ")}
-              </span>
-            </div>
-            {strategy.quests && strategy.quests.length > 0 && (
-              <div className="flex items-center space-x-2 text-amber-400">
-                <Icon
-                  icon="mdi:sword-cross"
-                  className="w-4 h-4 flex-shrink-0"
-                />
-                <span className="truncate font-medium">
-                  {strategy.quests.join(", ")}
-                </span>
-              </div>
+        {/* Bottom indicators */}
+        <Group justify="space-between">
+          <Group gap="xs">
+            {/* Documents indicator */}
+            {strategy.docs.length > 0 && (
+              <Tooltip
+                label={`${strategy.docs.length} Strategy Document${strategy.docs.length !== 1 ? "s" : ""}`}
+              >
+                <Center>
+                  <Icon
+                    icon="mdi:file-document"
+                    style={{ width: 18, height: 18, color: "#60a5fa" }}
+                  />
+                </Center>
+              </Tooltip>
             )}
-          </div>
-          <div className="flex-shrink-0 flex items-center space-x-4">
-            <div className="flex items-center space-x-1.5">
-              <Icon icon="mdi:file-document-multiple" className="w-4 h-4" />
-              <span className="font-semibold">{strategy.docs.length}</span>
-            </div>
-            <div className="flex items-center space-x-1.5">
-              <Icon icon="mdi:calendar-clock" className="w-4 h-4" />
-              <span className="font-semibold">
-                {new Date(strategy.indexedOn).toLocaleDateString()}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+            {/* POVs indicator */}
+            {strategy.povs && strategy.povs.length > 0 && (
+              <Tooltip
+                label={`${strategy.povs.length} Player POV${strategy.povs.length !== 1 ? "s" : ""}`}
+              >
+                <Center>
+                  <Icon
+                    icon="mdi:eye"
+                    style={{ width: 18, height: 18, color: "#22d3ee" }}
+                  />
+                </Center>
+              </Tooltip>
+            )}
+
+            {/* Quests indicator */}
+            {strategy.quests && strategy.quests.length > 0 && (
+              <Tooltip
+                label={`${strategy.quests.length} Related Quest${strategy.quests.length !== 1 ? "s" : ""}`}
+              >
+                <Center>
+                  <Icon
+                    icon="mdi:sword-cross"
+                    style={{ width: 18, height: 18, color: "#fbbf24" }}
+                  />
+                </Center>
+              </Tooltip>
+            )}
+          </Group>
+
+          {/* Date */}
+          <Text size="xs" c="dimmed">
+            {new Date(strategy.indexedOn).toLocaleDateString()}
+          </Text>
+        </Group>
+      </Stack>
+    </Card>
   );
 };
 
