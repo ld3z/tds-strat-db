@@ -1,32 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate, useParams, Navigate } from 'react-router-dom';
-import { StrategyProvider, useStrategy } from './context/StrategyContext';
-import StrategyModal from './components/StrategyModal';
-import { Strategy } from './types/Strategy';
-import Layout from './components/Layout';
-import Home from './components/Home';
-import Strategies from './pages/Strategies';
+import { useState, useEffect } from "react";
+import {
+  Routes,
+  Route,
+  useNavigate,
+  useParams,
+  Navigate,
+} from "react-router-dom";
+import { StrategyProvider, useStrategy } from "./context/StrategyContext";
+import StrategyModal from "./components/StrategyModal";
+import { Strategy } from "./types/Strategy";
+import Layout from "./components/Layout";
+import Home from "./components/Home";
+import Strategies from "./pages/Strategies";
 
 const StrategyModalWrapper = () => {
   const { id } = useParams();
   const { strategies } = useStrategy();
   const navigate = useNavigate();
-  const [selectedStrategy, setSelectedStrategy] = useState<Strategy | null>(null);
+  const [selectedStrategy, setSelectedStrategy] = useState<Strategy | null>(
+    null,
+  );
 
   useEffect(() => {
     if (id) {
-      const strategy = strategies.find(s => s.id === id);
+      const strategy = strategies.find((s) => s.id === id);
       if (strategy) {
         setSelectedStrategy(strategy);
-        document.body.classList.add('no-scroll');
+        document.body.classList.add("no-scroll");
       }
     } else {
       setSelectedStrategy(null);
-      document.body.classList.remove('no-scroll');
+      document.body.classList.remove("no-scroll");
     }
 
     return () => {
-      document.body.classList.remove('no-scroll');
+      document.body.classList.remove("no-scroll");
     };
   }, [id, strategies]);
 
@@ -37,7 +45,7 @@ const StrategyModalWrapper = () => {
   return (
     <StrategyModal
       strategy={selectedStrategy}
-      onClose={() => navigate('/strategies')}
+      onClose={() => navigate("/strategies")}
     />
   );
 };

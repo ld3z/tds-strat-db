@@ -1,13 +1,16 @@
-import React from 'react';
-import { Icon } from '@iconify/react';
-import { Link, useLocation } from 'react-router-dom';
+import React from "react";
+import { Icon } from "@iconify/react";
+import { Link, useLocation } from "react-router-dom";
 
 interface HeaderProps {
   onMenuClick: () => void;
   onLegendClick: () => void;
 }
 
-const NavLink: React.FC<{ to: string; children: React.ReactNode }> = ({ to, children }) => {
+const NavLink: React.FC<{ to: string; children: React.ReactNode }> = ({
+  to,
+  children,
+}) => {
   const location = useLocation();
   const isActive = location.pathname === to;
 
@@ -16,8 +19,8 @@ const NavLink: React.FC<{ to: string; children: React.ReactNode }> = ({ to, chil
       to={to}
       className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
         isActive
-          ? 'bg-blue-500/20 text-blue-300'
-          : 'text-slate-300 hover:bg-slate-700 hover:text-white'
+          ? "bg-blue-500/20 text-blue-300"
+          : "text-slate-300 hover:bg-slate-700 hover:text-white"
       }`}
     >
       {children}
@@ -34,23 +37,30 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, onLegendClick }) => {
             <Icon icon="simple-icons:roblox" className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h1 className="text-base sm:text-xl font-bold text-white">Tower Defense Strategies</h1>
-            <p className="text-xs sm:text-sm text-slate-400">TDS Strategy Database</p>
+            <h1 className="text-base sm:text-xl font-bold text-white">
+              Tower Defense Strategies
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-400">
+              TDS Strategy Database
+            </p>
           </div>
         </Link>
         <div className="flex-grow"></div>
         <div className="hidden md:flex items-center space-x-2">
           <NavLink to="/home">Home</NavLink>
           <NavLink to="/strategies">Strategies</NavLink>
-          <button 
-            onClick={onLegendClick} 
+          <button
+            onClick={onLegendClick}
             className="bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-md text-sm font-medium text-slate-300 hover:text-white transition-colors"
           >
             FAQ
           </button>
         </div>
         <div className="md:hidden">
-          <button onClick={onMenuClick} className="text-slate-400 hover:text-white">
+          <button
+            onClick={onMenuClick}
+            className="text-slate-400 hover:text-white"
+          >
             <Icon icon="mdi:menu" className="w-6 h-6" />
           </button>
         </div>
